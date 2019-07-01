@@ -1,9 +1,9 @@
-import React from 'react';
-import app from './App';
-import { get } from 'http';
-import config from '../../../config'
+// import React from 'react';
+// import app from './App';
+import config from '../../config'
 
 class twitter {
+
   retrieveTweets(query) {
     const options = {
       method: 'GET',
@@ -26,3 +26,5 @@ class twitter {
       .catch(error => error); // perhaps customize more
   }
 }
+
+export default twitter;
