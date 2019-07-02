@@ -9,11 +9,13 @@ class twitter {
       method: 'GET',
       'content-type': 'application/json',
       body: {
-        query,
+        'query': query
       },
     };
 
-    fetch(config.API_ENDPOINT + '/tweets/queries', options)
+    const jsonOptions = JSON.stringify(options);
+
+    fetch(config.API_ENDPOINT + `/tweets/queries'/${query}`)
       .then(response => {
         if (!response.ok) {
           return {
