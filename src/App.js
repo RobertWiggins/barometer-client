@@ -2,16 +2,18 @@ import React from 'react';
 // import { Route, Link } from 'react-router-dom';
 import config from './config';
 import './App.css';
-import twitter from './apis/twitter/twitter';
-
+import Header from './Components/Header/Header.js'
+import FormQuery from './Components/FormQuery/FormQuery';
+import EmotionChart from './Components/EmotionChart/EmotionChart'
 class App extends React.Component {
   handleSearch(searchQuery) {
+    /* handle onChange text error and guiding handling */
     // console.log(searchQuery);
   }
 
   /* TODO come back and wire up functionally with twitter retrieveTweets() */
   handleSubmitQuery = query => {
-    // console.log(query);
+    console.log(query);
     // twitter.retrieveTweets(query);
 
     // let options = {
@@ -29,36 +31,23 @@ class App extends React.Component {
     /* try to communicate with backend */
     fetch(config.API_ENDPOINT + `/tweets/queries/${query}`) // how to send body?
       .then(response => {
-        if (!response.ok) {
-          throw new Error( 'something seems to have gone wrong');
+        if (!response.ok || response.status.toString()[0] !== 2) {
+          throw new Error( { message: 'something seems to have gone wrong'} );
         }
         return response.json();
       })
       .then(data => console.log('FROM THE FRONT END!!!!!', data))
-      .catch(error => console.log(error.status, error.message) ); // perhaps customize more
+      .catch(error => console.log(error) ); // fix error message handling
   }
 
   render() {
     return (
       <div>
-        <form
-          className="search"
-          id="searchOne"
-          onSubmit={e => {
-            e.preventDefault();
-            this.handleSubmitQuery(e.target.firstSearch.value);
-          }}
-        >
-          <label>Search</label>
-          <input
-            id="firstSearch"
-            type="text"
-            name="firstSearch"
-            onChange={e => this.handleSearch(e.target.value)}
-          />
-          <button>Submit</button>
-        </form>
+        <Header></Header>
+        <FormQuery handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
+        <EmotionChart></EmotionChart>
       </div>
+
     );
   }
 }
