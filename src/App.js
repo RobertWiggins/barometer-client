@@ -5,7 +5,15 @@ import './App.css';
 import Header from './Components/Header/Header.js'
 import FormQuery from './Components/FormQuery/FormQuery';
 import EmotionChart from './Components/EmotionChart/EmotionChart'
+import TweetList from './Components/TweetList/TweetList';
+
 class App extends React.Component {
+
+  state = {
+    watsonEmotionResults: null, 
+    tweets: null,
+  };
+
   handleSearch(searchQuery) {
     /* handle onChange text error and guiding handling */
     // console.log(searchQuery);
@@ -31,21 +39,42 @@ class App extends React.Component {
     /* try to communicate with backend */
     fetch(config.API_ENDPOINT + `/tweets/queries/${query}`) // how to send body?
       .then(response => {
-        if (!response.ok || response.status.toString()[0] !== 2) {
+        if (!response.ok) {
           throw new Error( { message: 'something seems to have gone wrong'} );
         }
         return response.json();
       })
-      .then(data => console.log('FROM THE FRONT END!!!!!', data))
+      .then(data => {
+        // console.log('FROM THE FRONT END!!!!!', data);
+        console.log('data.watsonEmotionResults: ', data.watsonEmotionResults);
+        this.setState( {
+          watsonEmotionResults: data.watsonEmotionResults,
+          tweets: data.tweetContentArr,
+        } )
+      })
       .catch(error => console.log(error) ); // fix error message handling
   }
 
   render() {
+    console.log('STATE CHANGED', this.state)
+
+    let isEmotionDataPresent = (this.state.watsonEmotionResults ? true : false);
+    let isTweetDataPresent = (this.state.tweets ? true : false);
+    console.log('isEmotionDataPresent: ', isEmotionDataPresent);
+
+    let emotionChartDisplay;
+    if (isEmotionDataPresent) {
+      emotionChartDisplay = <EmotionChart watsonEmotionResults={this.state.watsonEmotionResults}></EmotionChart>;
+    } else {
+      emotionChartDisplay = 'Emotion data not present, not displayed';
+    }
+
     return (
       <div>
         <Header></Header>
         <FormQuery handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
-        <EmotionChart></EmotionChart>
+        {emotionChartDisplay}
+        <TweetList tweets={this.state.tweets}></TweetList>
       </div>
 
     );

@@ -1,50 +1,48 @@
 import React from 'react';
-import './EmotionChart.css'
+import './EmotionChart.css';
+import {Bar, Radar, Polar} from 'react-chartjs-2';
 
 export default class EmotionChart extends React.Component {
 
-  state = {
-    usage: {
-      text_units: 1,
-      text_characters: 1650,
-      features: 2,
-    },
-    sentiment: {
-      document: {
-        score: 0.755227,
-        label: 'positive',
-      },
-    },
-    language: 'en',
-    emotion: {
-      targets: [
-        {
-          text: 'joyful',
-          emotion: {
-            sadness: 0.054594,
-            joy: 0.737256,
-            fear: 0.502948,
-            disgust: 0.012561,
-            anger: 0.013243,
-          },
-        },
-      ],
-      document: {
-        emotion: {
-          sadness: 0.08013,
-          joy: 0.703554,
-          fear: 0.593047,
-          disgust: 0.664955,
-          anger: 0.5921,
-        },
-      },
-    },
-  };
+  
 
   render() {
+
+    // format chart.js react data
+    let isDataPresent = (this.props.watsonEmotionResults ? true : false);
+    let data = null;
+    if (isDataPresent) { 
+    data = {
+      labels: Object.keys(this.props.watsonEmotionResults.emotion.targets[0].emotion),
+      datasets: [{
+          label: 'Emotion density',
+          data: Object.values(this.props.watsonEmotionResults.emotion.targets[0].emotion),
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+          ],
+          borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+          ],
+          borderWidth: 1
+      }],
+    }
+  } 
+
+    console.log('data in EmotionChart: ', data);
+
     return (
       <section>
         <h2> Chart </h2>
+        <Bar id='emotionChart' data={data} ></Bar>
+        
       </section>
     );
   }
