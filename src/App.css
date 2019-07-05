@@ -3,7 +3,7 @@
 }
 
 html {
-  background-color: rgba(29,161,242,1.00);
+  background-color: rgba(29, 161, 242, 1);
 }
 
 header {
@@ -18,7 +18,7 @@ main {
 body {
   text-align: center;
   margin: 15px;
-  background-color:white;
+  background-color: snow;
   height: 95vh;
   border-radius: 1%;
 }
@@ -46,4 +46,18 @@ body {
 
 #emotionChart {
   padding: 10px;
+}
+
+#listTitle {
+  border-bottom: solid gray 1px;
+  padding-bottom: 10px;
+}
+
+
+
+#tweets li {
+  border-left: solid gray 1px;
+  border-right: solid gray 1px;
+  border-top: solid gray 1px;
+
 }

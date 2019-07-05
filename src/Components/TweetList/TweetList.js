@@ -17,7 +17,8 @@ export default class TweetList extends React.Component {
 
     return (
       <section>
-        <ul >
+        <h3 id="listTitle">Tweets</h3>
+        <ul id="tweets">
           {tweetList}
         </ul>
       </section>
