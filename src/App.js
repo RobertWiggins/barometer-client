@@ -7,6 +7,8 @@ import FormQuery from './Components/FormQuery/FormQuery';
 import EmotionChart from './Components/EmotionChart/EmotionChart'
 import TweetList from './Components/TweetList/TweetList';
 import ExampleChart from './Components/ExampleChart/ExampleChart'
+import SentimentChart from './Components/SentimentChart/SentimentChart';
+import ExampleSentimentChart from './Components/ExampleSentimentChart/ExampleSentimentChart'
 
 class App extends React.Component {
 
@@ -63,11 +65,13 @@ class App extends React.Component {
     let isTweetDataPresent = (this.state.tweets ? true : false);
     console.log('isEmotionDataPresent: ', isEmotionDataPresent);
 
-    let emotionChartDisplay;
+    let emotionChartDisplay, sentimentChartDisplay;
     if (isEmotionDataPresent) {
       emotionChartDisplay = <EmotionChart watsonEmotionResults={this.state.watsonEmotionResults}></EmotionChart>;
+      sentimentChartDisplay = <SentimentChart watsonEmotionResults={this.state.watsonEmotionResults}></SentimentChart>
     } else {
       emotionChartDisplay = <ExampleChart></ExampleChart>;
+      sentimentChartDisplay = <ExampleSentimentChart></ExampleSentimentChart>
     }
 
     return (
@@ -75,6 +79,7 @@ class App extends React.Component {
         <Header></Header>
         <FormQuery handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
         {emotionChartDisplay}
+        {sentimentChartDisplay}
         <TweetList tweets={this.state.tweets}></TweetList>
       </main>
 

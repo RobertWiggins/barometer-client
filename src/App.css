@@ -53,11 +53,23 @@ body {
   padding-bottom: 10px;
 }
 
-
+#tweets > ul {
+  display: flex;
+  justify-content: center;
+}
 
 #tweets li {
   border-left: solid gray 1px;
   border-right: solid gray 1px;
   border-top: solid gray 1px;
-
+  border-radius: 1%;
+  padding: 15px;
+  text-align: left;
 }
+
+ul {
+  list-style: none;
+  padding-left: none;
+  padding-inline-start: 0px;
+}
+
