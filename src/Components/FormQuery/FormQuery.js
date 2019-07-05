@@ -1,30 +1,30 @@
 import React from 'react';
 
 class FormQuery extends React.Component {
-
-  state = {
-
-  };
+  state = {};
 
   render() {
     return (
-      <form
-        className="search"
-        id="searchOne"
-        onSubmit={e => {
-          e.preventDefault();
-          this.props.handleSubmitQuery(e.target.firstSearch.value);
-        }}
-      >
-        <label htmlFor="firstSearch">Search</label>
-        <input
-          id="firstSearch"
-          type="text"
-          name="firstSearch"
-          onChange={e => this.props.handleSearch(e.target.value)}
-        />
-        <button>Submit</button>
-      </form>
+      <div id="searchArea">
+        <form
+          className="search"
+          id="searchOne"
+          onSubmit={e => {
+            e.preventDefault();
+            this.props.handleSubmitQuery(e.target.searchTweets.value);
+          }}
+        >
+          <label htmlFor="searchTweets" id='search-label'>Search Twitter</label>
+          <input
+            id="searchTweets"
+            type="text"
+            name="searchTweets"
+            placeholder="New York Yankees"
+            onChange={e => this.props.handleSearch(e.target.value)}
+          />
+          <button>Search</button>
+        </form>
+      </div>
     );
   }
 }

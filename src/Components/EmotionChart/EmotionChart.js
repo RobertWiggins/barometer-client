@@ -40,7 +40,6 @@ export default class EmotionChart extends React.Component {
 
     return (
       <section>
-        <h2> Chart </h2>
         <Bar id='emotionChart' data={data} ></Bar>
         
       </section>

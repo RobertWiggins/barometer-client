@@ -5,9 +5,9 @@ export default class Header extends React.Component {
   
   render() {
     return (
-      <section>
-        <h1> Barometer </h1>
-      </section>
+      <header>
+        <h1>Barometer</h1>
+      </header>
     );
   }
 }

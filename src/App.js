@@ -6,6 +6,7 @@ import Header from './Components/Header/Header.js'
 import FormQuery from './Components/FormQuery/FormQuery';
 import EmotionChart from './Components/EmotionChart/EmotionChart'
 import TweetList from './Components/TweetList/TweetList';
+import ExampleChart from './Components/ExampleChart/ExampleChart'
 
 class App extends React.Component {
 
@@ -66,16 +67,16 @@ class App extends React.Component {
     if (isEmotionDataPresent) {
       emotionChartDisplay = <EmotionChart watsonEmotionResults={this.state.watsonEmotionResults}></EmotionChart>;
     } else {
-      emotionChartDisplay = 'Emotion data not present, not displayed';
+      emotionChartDisplay = <ExampleChart></ExampleChart>;
     }
 
     return (
-      <div>
+      <main class="main">
         <Header></Header>
         <FormQuery handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
         {emotionChartDisplay}
         <TweetList tweets={this.state.tweets}></TweetList>
-      </div>
+      </main>
 
     );
   }
