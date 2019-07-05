@@ -78,7 +78,7 @@ export default class ExampleChart extends React.Component {
     const options = {
       title: {
         display: true,
-        text: 'emotion density',
+        text: 'emotion spectrum',
         fontSize: 22,
         fontColor: '#000000'
       },

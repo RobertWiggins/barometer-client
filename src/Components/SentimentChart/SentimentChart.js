@@ -21,11 +21,8 @@ export default class SentimentChart extends React.Component {
           (this.props.watsonEmotionResults.sentiment.document.label ===
           'negative'
             ? 'rgba(255, 99, 132, 1)'
-            : 'rgba(75, 192, 192, 1)');
+            : '#008000');
       data = {
-        labels: [
-          this.props.watsonEmotionResults.sentiment.document.label
-        ],
         datasets: [
           {
             data: [

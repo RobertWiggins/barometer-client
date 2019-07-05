@@ -38,9 +38,21 @@ export default class EmotionChart extends React.Component {
 
     console.log('data in EmotionChart: ', data);
 
+    const options = {
+      title: {
+        display: true,
+        text: 'emotion spectrum',
+        fontSize: 22,
+        fontColor: '#000000'
+      },
+      legend: {
+        display: false,
+      }
+    }
+
     return (
       <section>
-        <Bar id='emotionChart' data={data} ></Bar>
+        <Bar id='emotionChart' data={data} options={options} ></Bar>
         
       </section>
     );
