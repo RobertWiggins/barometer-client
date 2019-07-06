@@ -12,14 +12,14 @@ header {
 }
 
 main {
-  height: 90vh;
+  /* height: 90vh; */
 }
 
 body {
   text-align: center;
   margin: 15px;
   background-color: snow;
-  height: 95vh;
+  min-height: 100vh;
   border-radius: 1%;
 }
 
@@ -49,8 +49,9 @@ body {
 }
 
 #listTitle {
-  border-bottom: solid gray 1px;
-  padding-bottom: 10px;
+  border-bottom: solid gray 2px;
+  padding-bottom: 10px; 
+  padding-top: 15px;
 }
 
 #tweets > ul {
