@@ -80,7 +80,7 @@ class App extends React.Component {
     }
 
     return (
-      <main class="main">
+      <main className="main">
         <Header></Header>
         <FormQuery isSearchDisabled={this.state.isSearchDisabled} handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
         <div id="charts-area">

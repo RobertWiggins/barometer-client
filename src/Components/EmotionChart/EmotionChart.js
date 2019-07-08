@@ -6,17 +6,43 @@ export default class EmotionChart extends React.Component {
 
   
 
+  calculateAvgEmotion(targetsEmotions) {
+    let averageEmotions = {
+      "sadness": 0,
+      "joy": 0,
+      "fear": 0,
+      "disgust": 0,
+      "anger": 0,
+    }
+    
+    targetsEmotions.forEach( emotions => {
+        averageEmotions.sadness += emotions.emotion.sadness;
+        averageEmotions.joy += emotions.emotion.joy;
+        averageEmotions.fear += emotions.emotion.fear;
+        averageEmotions.disgust += emotions.emotion.disgust;
+        averageEmotions.anger += emotions.emotion.anger;
+      }
+    );
+    /* TODO divide by zero case??? catch error? */
+    for (let emotion in averageEmotions) {
+      averageEmotions[emotion] /= targetsEmotions.length;
+    }
+    return averageEmotions;
+  }
+
   render() {
+    // get average emotion across all target keywords
+    const averageEmotionsObj = this.calculateAvgEmotion(this.props.watsonEmotionResults.emotion.targets)
 
     // format chart.js react data
     let isDataPresent = (this.props.watsonEmotionResults ? true : false);
     let data = null;
     if (isDataPresent) { 
     data = {
-      labels: Object.keys(this.props.watsonEmotionResults.emotion.targets[0].emotion),
+      labels: Object.keys(averageEmotionsObj),
       datasets: [{
           label: 'Emotion density',
-          data: Object.values(this.props.watsonEmotionResults.emotion.targets[0].emotion),
+          data: Object.values(averageEmotionsObj),
           backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -41,7 +67,7 @@ export default class EmotionChart extends React.Component {
     const options = {
       title: {
         display: true,
-        text: 'emotion spectrum',
+        text: 'emotion spectrum: target keywords',
         fontSize: 22,
         fontColor: '#000000'
       },
