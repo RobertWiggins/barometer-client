@@ -9,6 +9,7 @@ import TweetList from './Components/TweetList/TweetList';
 import ExampleChart from './Components/ExampleChart/ExampleChart'
 import SentimentChart from './Components/SentimentChart/SentimentChart';
 import ExampleSentimentChart from './Components/ExampleSentimentChart/ExampleSentimentChart'
+import SearchError from './Components/SearchError/SearchError'
 
 class App extends React.Component {
 
@@ -16,6 +17,7 @@ class App extends React.Component {
     watsonEmotionResults: null, 
     tweets: null,
     isSearchDisabled: false,
+    hasError: false,
   };
 
   // componentDidMount() {
@@ -58,13 +60,15 @@ class App extends React.Component {
         this.setState( {
           watsonEmotionResults: data.watsonEmotionResults,
           tweets: data.duplicatesFiltered,
+          hasError: false,
         } )
       })
-      .catch(error => console.log(error) ); // fix error message handling
+      .catch(error => this.setState({
+        hasError: true,
+      }) ); // fix error message handling
   }
 
   render() {
-    console.log('STATE CHANGED', this.state)
 
     let isEmotionDataPresent = (this.state.watsonEmotionResults ? true : false);
     let isTweetDataPresent = (this.state.tweets ? true : false);
@@ -79,10 +83,18 @@ class App extends React.Component {
       sentimentChartDisplay = <ExampleSentimentChart></ExampleSentimentChart>
     }
 
+    let errorDisplay;
+    if (this.state.hasError) {
+      errorDisplay = <SearchError></SearchError> 
+    } else {
+      errorDisplay = '';
+    }
+
     return (
       <main className="main">
         <Header></Header>
         <FormQuery isSearchDisabled={this.state.isSearchDisabled} handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
+        {errorDisplay}
         <div id="charts-area">
           {emotionChartDisplay}
           {sentimentChartDisplay}

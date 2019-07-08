@@ -67,9 +67,10 @@ export default class EmotionChart extends React.Component {
     const options = {
       title: {
         display: true,
-        text: 'emotion spectrum: target keywords',
-        fontSize: 22,
-        fontColor: '#000000'
+        text: 'target keywords',
+        fontSize: 25,
+        fontColor: '#000000',
+        padding: 20,
       },
       legend: {
         display: false,

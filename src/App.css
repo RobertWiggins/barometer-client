@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Arial';
+  font-family: 'Open Sans', 'Source Sans Pro', 'Lato', sans-serif;
 }
 
 html {
@@ -10,6 +10,10 @@ html {
 header {
   padding: 5px;
   font-family: 'Roboto', sans-serif;
+}
+
+header > h1 {
+  font-size: 45px;
 }
 
 main {
@@ -22,11 +26,13 @@ main {
 
 body {
   text-align: center;
-  margin: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
   background-color: snow;
   min-height: 100vh;
   border-radius: 1%;
   padding-bottom: 15px;
+  /* what to do here with body background */
 }
 
 #searchArea {
@@ -34,17 +40,39 @@ body {
   flex-direction: row;
   justify-content: center;
   align-content: space-between;
-  padding: 15px;
+  padding-top: 15px;
 }
 
 #search-label {
   padding-right: 7px;
 }
 
-.search > button {
+/* .search > button {
   margin-left: 3px;
   font: white;
   border-radius: 10%;
+} */
+
+/* trying icon */
+.search > button {
+  /* background: url(./images/search_icon.jpg) no-repeat center center; */
+  height: 30px;
+  width: 30px;
+  /* object-fit: contain; */
+  color: transparent;
+  border: none;
+
+  /* width : 10px;
+	height : 10px;
+	border : none;
+  font-size : 0 */
+}
+
+#searchError,
+#searchError > p {
+  background-color: #ff9800;
+  color: white;
+  font-weight: 1.5em;
 }
 
 .hidden {
@@ -55,13 +83,10 @@ body {
   border-radius: 2%;
 }
 
-
-
-/* #charts-area {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-} */
+#charts-area {
+  /* background-color: white; */
+  /* margin: 10px; */
+}
 
 #emotionChart {
   padding: 10px;
@@ -69,7 +94,7 @@ body {
 
 #listTitle {
   border-bottom: solid gray 2px;
-  padding-bottom: 10px; 
+  padding-bottom: 10px;
   padding-top: 15px;
 }
 

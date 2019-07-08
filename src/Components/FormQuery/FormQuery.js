@@ -14,7 +14,7 @@ class FormQuery extends React.Component {
           }}
         >
           <label htmlFor="searchTweets" id='search-label'>Search Twitter keywords</label>
-          <input maxlength="25" disabled={this.props.isSearchDisabled}
+          <input required maxLength="25" disabled={this.props.isSearchDisabled}
             id="searchTweets"
             type="text"
             name="searchTweets"
