@@ -15,34 +15,35 @@ class App extends React.Component {
   state = {
     watsonEmotionResults: null, 
     tweets: null,
+    isSearchDisabled: false,
   };
+
+  // componentDidMount() {
+  //   this.setState({
+  //     watsonEmotionResults: null, 
+  //     tweets: null,
+  //     isSearchDisabled: false,
+  //   })
+  // }
 
   // returns false and disables search function if search > 25ch
   handleSearch(searchQuery) {
-    if (searchQuery.length > 25 ) {
-      return false;
-    } else {
-      return true;
-    }
+    // maximum search query length, allows limiting of watson targets
+  //   const queryMaxLength = 25;
+  //   if (searchQuery.length > queryMaxLength && !this.state.isSearchDisabled) {
+  //     this.setState({
+  //       isSearchDisabled: true,
+  //   });
+  //  } else if (searchQuery.length <= queryMaxLength && this.state.isSearchDisabled) {
+  //     this.setState({
+  //       isSearchDisabled: false,
+  //     });
+  //   }
   }
 
   /* TODO come back and wire up functionally with twitter retrieveTweets() */
   handleSubmitQuery = query => {
     console.log(query);
-    // twitter.retrieveTweets(query);
-
-    // let options = {
-    //   headers: new Headers( { 
-    //     'content-type': 'application/json'
-    //   }),
-    //   params: ({
-    //     query,
-    //   })
-    //   // body: {
-    //   //   query,
-    //   // },
-    // }
-    // JSON.stringify(options);
     /* try to communicate with backend */
     fetch(config.API_ENDPOINT + `/tweets/queries/${query}`) // how to send body?
       .then(response => {
@@ -81,7 +82,7 @@ class App extends React.Component {
     return (
       <main class="main">
         <Header></Header>
-        <FormQuery handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
+        <FormQuery isSearchDisabled={this.state.isSearchDisabled} handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
         <div id="charts-area">
           {emotionChartDisplay}
           {sentimentChartDisplay}
