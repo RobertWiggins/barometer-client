@@ -17,9 +17,13 @@ class App extends React.Component {
     tweets: null,
   };
 
+  // returns false and disables search function if search > 25ch
   handleSearch(searchQuery) {
-    /* handle onChange text error and guiding handling */
-    // console.log(searchQuery);
+    if (searchQuery.length > 25 ) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   /* TODO come back and wire up functionally with twitter retrieveTweets() */
@@ -52,7 +56,7 @@ class App extends React.Component {
         console.log('data.watsonEmotionResults: ', data.watsonEmotionResults);
         this.setState( {
           watsonEmotionResults: data.watsonEmotionResults,
-          tweets: data.tweetContentArr,
+          tweets: data.duplicatesFiltered,
         } )
       })
       .catch(error => console.log(error) ); // fix error message handling
@@ -78,11 +82,12 @@ class App extends React.Component {
       <main class="main">
         <Header></Header>
         <FormQuery handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
-        {emotionChartDisplay}
-        {sentimentChartDisplay}
+        <div id="charts-area">
+          {emotionChartDisplay}
+          {sentimentChartDisplay}
+        </div>
         <TweetList tweets={this.state.tweets}></TweetList>
       </main>
-
     );
   }
 }

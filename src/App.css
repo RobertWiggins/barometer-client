@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Arial';
 }
 
 html {
@@ -13,6 +14,10 @@ header {
 
 main {
   /* height: 90vh; */
+  max-width: 1000px;
+  min-width: 290px;
+  text-align: center;
+  margin: auto;
 }
 
 body {
@@ -21,10 +26,12 @@ body {
   background-color: snow;
   min-height: 100vh;
   border-radius: 1%;
+  padding-bottom: 15px;
 }
 
 #searchArea {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-content: space-between;
   padding: 15px;
@@ -43,6 +50,14 @@ body {
 #searchTweets {
   border-radius: 2%;
 }
+
+
+
+/* #charts-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+} */
 
 #emotionChart {
   padding: 10px;
@@ -77,3 +92,15 @@ ul {
 #sentimentChart {
   padding-top: 15px;
 }
+
+/* @media only screen and (min-width: 768px) {
+  #charts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #sentimentChart {
+    padding: 10px;
+  }
+} */

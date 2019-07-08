@@ -76,7 +76,7 @@ export default class ExampleSentimentChart extends React.Component {
 
     return (
       <section>
-        <HorizontalBar id="sentimentChart" options={options} data={data} />
+        <HorizontalBar className="chart" id="sentimentChart" options={options} data={data} />
       </section>
     );
   }
