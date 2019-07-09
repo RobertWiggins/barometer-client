@@ -60,7 +60,7 @@ class App extends React.Component {
 
   /* TODO come back and wire up functionally with twitter retrieveTweets() */
   handleSubmitQuery = query => {
-    console.log(query);
+    // console.log(query);
     /* try to communicate with backend */
     fetch(config.API_ENDPOINT + `/tweets/queries/${query}`) // how to send body?
       .then(response => {
@@ -76,8 +76,8 @@ class App extends React.Component {
           watsonEmotionResults: data.watsonEmotionResults,
           tweets: data.duplicatesFiltered,
           hasError: false,
-          currentQuery: data.currentQuery,
-        }, this.addToHistory());
+          currentQuery: query
+        }, this.addToHistory(query)); // TODO review with mentor. WHY???
         /* TODO add query to history. Optimal? */
         
       })
@@ -88,21 +88,24 @@ class App extends React.Component {
       ); // fix error message handling
   };
 
-  addToHistory() {
+  addToHistory(newQuery) {
+    console.log('PARAM: ', newQuery);
+    console.log('CURRENT QUERY: ', this.state.currentQuery);
     const body = JSON.stringify({
-      query: this.state.currentQuery,
+      query: newQuery
     });
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body,
+      body
     };
     // check if its already been searched, if not dont add
     let pastQueries = [];
     for (let i = 0; i < this.state.queries.length; i++) {
-      pastQueries.push(this.state.queries.query);
+      pastQueries.push(this.state.queries[i].query);
     }
-    if (!pastQueries.includes(this.state.currentQuery)) {
+    console.log(options, pastQueries);
+    if (!pastQueries.includes(newQuery)) {
       fetch(config.API_ENDPOINT + '/queries/history', options)
         .then(response => {
           if (!response.ok) {
