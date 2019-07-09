@@ -25,14 +25,14 @@ class App extends React.Component {
 
   /* retrieve past query history for all users */
   componentDidMount() {
-    fetch('/tweets/queries/history')
+    fetch(config.API_ENDPOINT + '/queries/history')
     .then(response => {
       if (!response.ok) {
         throw new Error({ message: 'error with getting history'});
       }
-      response.json()
+      return response.json()
     }).then(data => {
-      console.log('QUERY HISTORY ON MOUNT: ', data.queries)
+        console.log('QUERY HISTORY ON MOUNT: ', data.queries)
         this.setState( {
           queries: data.queries
         });
@@ -41,6 +41,7 @@ class App extends React.Component {
   }
   
   /* Query valid and submitted, add query to history */
+  /** TODO im doing this wrong, needs prev props */
   componentDidUpdate() {
     const body = JSON.stringify( {
       query: this.state.currentQuery
@@ -51,13 +52,15 @@ class App extends React.Component {
       body,
     };
 
-    fetch('/tweets/queries/history', options)
+    /** TODO im doing this wrong */
+    fetch(config.API_ENDPOINT + '/queries/history', options)
       .then(response => {
         if (!response.ok) {
           throw new Error({ message: 'error with retrieving history'});
         }
-        response.json()
-      }).then(data => console.log('inserted query to history: ', data))
+        return response.json()
+      })
+      .then(data => console.log('inserted query to history: ', data))
       .catch(err => console.log(err.message))
   }
 

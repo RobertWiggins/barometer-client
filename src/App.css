@@ -76,6 +76,11 @@ body {
   visibility: hidden;
 }
 
+#searchHistory span {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 #searchTweets {
   border-radius: 2%;
 }

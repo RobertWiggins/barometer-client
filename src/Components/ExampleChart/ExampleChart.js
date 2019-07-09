@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bar, Radar, Polar } from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 
 export default class ExampleChart extends React.Component {
   watsonEmotionResults =  {
@@ -88,7 +88,7 @@ export default class ExampleChart extends React.Component {
       }
     }
 
-    console.log('data in EmotionChart: ', data);
+    // console.log('data in EmotionChart: ', data);
 
     return (
       <section id="emotionChart">

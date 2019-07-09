@@ -1,5 +1,4 @@
 import React from 'react';
-import { directive } from '@babel/types';
 
 export default class SearchError extends React.Component {
   render() {

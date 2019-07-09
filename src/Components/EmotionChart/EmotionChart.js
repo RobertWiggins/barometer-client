@@ -1,6 +1,6 @@
 import React from 'react';
 import './EmotionChart.css';
-import {Bar, Radar, Polar} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 
 export default class EmotionChart extends React.Component {
 
