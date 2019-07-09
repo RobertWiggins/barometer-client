@@ -21,7 +21,7 @@ class FormQuery extends React.Component {
             placeholder="New York Yankees"
             onChange={e => this.props.handleSearch(e.target.value)}
           />
-          <button disabled={this.props.isSearchDisabled}>Search</button>
+          <button disabled={this.props.isSearchDisabled}><img src="./search_icon.png" alt="search"></img></button>
           <p className={!this.props.isSearchDisabled ? "hidden" : ""} id="searchWarning">*query must be less than 25 characters</p>
         </form>
       </div>

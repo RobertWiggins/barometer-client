@@ -49,8 +49,8 @@ export default class SentimentChart extends React.Component {
     } 
 
     return (
-      <section>
-        <HorizontalBar className="chart" id="sentimentChart" options={options} data={data} />
+      <section id="sentimentChart">
+        <HorizontalBar className="chart" options={options} data={data} />
       </section>
     );
   }

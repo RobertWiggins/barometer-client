@@ -2,19 +2,18 @@ import React from 'react';
 // import { Route, Link } from 'react-router-dom';
 import config from './config';
 import './App.css';
-import Header from './Components/Header/Header.js'
+import Header from './Components/Header/Header.js';
 import FormQuery from './Components/FormQuery/FormQuery';
-import EmotionChart from './Components/EmotionChart/EmotionChart'
+import EmotionChart from './Components/EmotionChart/EmotionChart';
 import TweetList from './Components/TweetList/TweetList';
-import ExampleChart from './Components/ExampleChart/ExampleChart'
+import ExampleChart from './Components/ExampleChart/ExampleChart';
 import SentimentChart from './Components/SentimentChart/SentimentChart';
-import ExampleSentimentChart from './Components/ExampleSentimentChart/ExampleSentimentChart'
-import SearchError from './Components/SearchError/SearchError'
+import ExampleSentimentChart from './Components/ExampleSentimentChart/ExampleSentimentChart';
+import SearchError from './Components/SearchError/SearchError';
 
 class App extends React.Component {
-
   state = {
-    watsonEmotionResults: null, 
+    watsonEmotionResults: null,
     tweets: null,
     isSearchDisabled: false,
     hasError: false,
@@ -22,7 +21,7 @@ class App extends React.Component {
 
   // componentDidMount() {
   //   this.setState({
-  //     watsonEmotionResults: null, 
+  //     watsonEmotionResults: null,
   //     tweets: null,
   //     isSearchDisabled: false,
   //   })
@@ -31,16 +30,16 @@ class App extends React.Component {
   // returns false and disables search function if search > 25ch
   handleSearch(searchQuery) {
     // maximum search query length, allows limiting of watson targets
-  //   const queryMaxLength = 25;
-  //   if (searchQuery.length > queryMaxLength && !this.state.isSearchDisabled) {
-  //     this.setState({
-  //       isSearchDisabled: true,
-  //   });
-  //  } else if (searchQuery.length <= queryMaxLength && this.state.isSearchDisabled) {
-  //     this.setState({
-  //       isSearchDisabled: false,
-  //     });
-  //   }
+    //   const queryMaxLength = 25;
+    //   if (searchQuery.length > queryMaxLength && !this.state.isSearchDisabled) {
+    //     this.setState({
+    //       isSearchDisabled: true,
+    //   });
+    //  } else if (searchQuery.length <= queryMaxLength && this.state.isSearchDisabled) {
+    //     this.setState({
+    //       isSearchDisabled: false,
+    //     });
+    //   }
   }
 
   /* TODO come back and wire up functionally with twitter retrieveTweets() */
@@ -50,56 +49,67 @@ class App extends React.Component {
     fetch(config.API_ENDPOINT + `/tweets/queries/${query}`) // how to send body?
       .then(response => {
         if (!response.ok) {
-          throw new Error( { message: 'something seems to have gone wrong'} );
+          throw new Error({ message: 'something seems to have gone wrong' });
         }
         return response.json();
       })
       .then(data => {
         // console.log('FROM THE FRONT END!!!!!', data);
         console.log('data.watsonEmotionResults: ', data.watsonEmotionResults);
-        this.setState( {
+        this.setState({
           watsonEmotionResults: data.watsonEmotionResults,
           tweets: data.duplicatesFiltered,
           hasError: false,
-        } )
+        });
       })
-      .catch(error => this.setState({
-        hasError: true,
-      }) ); // fix error message handling
-  }
+      .catch(error =>
+        this.setState({
+          hasError: true,
+        })
+      ); // fix error message handling
+  };
 
   render() {
-
-    let isEmotionDataPresent = (this.state.watsonEmotionResults ? true : false);
-    let isTweetDataPresent = (this.state.tweets ? true : false);
+    let isEmotionDataPresent = this.state.watsonEmotionResults ? true : false;
+    let isTweetDataPresent = this.state.tweets ? true : false;
     console.log('isEmotionDataPresent: ', isEmotionDataPresent);
 
     let emotionChartDisplay, sentimentChartDisplay;
     if (isEmotionDataPresent) {
-      emotionChartDisplay = <EmotionChart watsonEmotionResults={this.state.watsonEmotionResults}></EmotionChart>;
-      sentimentChartDisplay = <SentimentChart watsonEmotionResults={this.state.watsonEmotionResults}></SentimentChart>
+      emotionChartDisplay = (
+        <EmotionChart watsonEmotionResults={this.state.watsonEmotionResults} />
+      );
+      sentimentChartDisplay = (
+        <SentimentChart
+          watsonEmotionResults={this.state.watsonEmotionResults}
+        />
+      );
     } else {
-      emotionChartDisplay = <ExampleChart></ExampleChart>;
-      sentimentChartDisplay = <ExampleSentimentChart></ExampleSentimentChart>
+      emotionChartDisplay = <ExampleChart />;
+      sentimentChartDisplay = <ExampleSentimentChart />;
     }
 
     let errorDisplay;
     if (this.state.hasError) {
-      errorDisplay = <SearchError></SearchError> 
+      errorDisplay = <SearchError />;
     } else {
       errorDisplay = '';
     }
 
     return (
       <main className="main">
-        <Header></Header>
-        <FormQuery isSearchDisabled={this.state.isSearchDisabled} handleSearch={this.handleSearch} handleSubmitQuery={this.handleSubmitQuery} ></FormQuery>
+        <Header />
+        <FormQuery
+          isSearchDisabled={this.state.isSearchDisabled}
+          handleSearch={this.handleSearch}
+          handleSubmitQuery={this.handleSubmitQuery}
+        />
         {errorDisplay}
-        <div id="charts-area">
-          {emotionChartDisplay}
-          {sentimentChartDisplay}
+        <div id="grid-holder">
+            {emotionChartDisplay}
+            {sentimentChartDisplay}
+            <TweetList tweets={this.state.tweets} />
         </div>
-        <TweetList tweets={this.state.tweets}></TweetList>
       </main>
     );
   }
