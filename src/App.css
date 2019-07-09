@@ -5,6 +5,8 @@
 
 html {
   background-color: rgba(29, 161, 242, 1);
+  max-width: 1000px;
+  min-width: 290px;
 }
 
 header {
@@ -18,8 +20,6 @@ header > h1 {
 
 main {
   /* height: 90vh; */
-  max-width: 1000px;
-  min-width: 290px;
   text-align: center;
   margin: auto;
 }
@@ -62,7 +62,7 @@ body {
 
 /* trying icon */
 .search img {
-  height: 1.5em;
+  height: 1em;
 }
 
 #searchError,
@@ -79,6 +79,14 @@ body {
 #searchHistory span {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#searchHistory {
+  padding-bottom: 15px;
+}
+
+#searchHistory h3 {
+  margin-top: 0px;
 }
 
 #searchTweets {
@@ -130,7 +138,7 @@ ul {
   grid-row: 2;
 }
 
-/* @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 850px) {
   #charts {
     display: flex;
     flex-direction: row;
@@ -140,4 +148,4 @@ ul {
   #sentimentChart {
     padding: 10px;
   }
-} */
+}

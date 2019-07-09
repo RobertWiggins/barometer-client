@@ -10,10 +10,9 @@ import ExampleChart from './Components/ExampleChart/ExampleChart';
 import SentimentChart from './Components/SentimentChart/SentimentChart';
 import ExampleSentimentChart from './Components/ExampleSentimentChart/ExampleSentimentChart';
 import SearchError from './Components/SearchError/SearchError';
-import SearchHistory from './Components/SearchHistory/SearchHistory'
+import SearchHistory from './Components/SearchHistory/SearchHistory';
 
 class App extends React.Component {
-
   state = {
     watsonEmotionResults: null,
     tweets: null,
@@ -26,43 +25,23 @@ class App extends React.Component {
   /* retrieve past query history for all users */
   componentDidMount() {
     fetch(config.API_ENDPOINT + '/queries/history')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error({ message: 'error with getting history'});
-      }
-      return response.json()
-    }).then(data => {
-        console.log('QUERY HISTORY ON MOUNT: ', data.queries)
-        this.setState( {
-          queries: data.queries
-        });
-    })
-    .catch(err => console.log(err.message))
-  }
-  
-  /* Query valid and submitted, add query to history */
-  /** TODO im doing this wrong, needs prev props */
-  componentDidUpdate() {
-    const body = JSON.stringify( {
-      query: this.state.currentQuery
-    });
-    const options = { 
-      method: 'POST', 
-      headers: { 'content-type': 'application/json' },
-      body,
-    };
-
-    /** TODO im doing this wrong */
-    fetch(config.API_ENDPOINT + '/queries/history', options)
       .then(response => {
         if (!response.ok) {
-          throw new Error({ message: 'error with retrieving history'});
+          throw new Error({ message: 'error with getting history' });
         }
-        return response.json()
+        return response.json();
       })
-      .then(data => console.log('inserted query to history: ', data))
-      .catch(err => console.log(err.message))
+      .then(data => {
+        console.log('QUERY HISTORY ON MOUNT: ', data.queries);
+        this.setState({
+          queries: data.queries,
+        });
+      })
+      .catch(err => console.log(err.message));
   }
+
+  /* Query valid and submitted, add query to history */
+  /** TODO im doing this wrong, needs prev props */
 
   // returns false and disables search function if search > 25ch
   handleSearch(searchQuery) {
@@ -81,7 +60,6 @@ class App extends React.Component {
 
   /* TODO come back and wire up functionally with twitter retrieveTweets() */
   handleSubmitQuery = query => {
-
     console.log(query);
     /* try to communicate with backend */
     fetch(config.API_ENDPOINT + `/tweets/queries/${query}`) // how to send body?
@@ -98,8 +76,9 @@ class App extends React.Component {
           watsonEmotionResults: data.watsonEmotionResults,
           tweets: data.duplicatesFiltered,
           hasError: false,
-          currentQuery: data.currentQuery
-        });
+          currentQuery: data.currentQuery,
+        }, this.addToHistory());
+        /* TODO add query to history. Optimal? */
         
       })
       .catch(error =>
@@ -108,6 +87,38 @@ class App extends React.Component {
         })
       ); // fix error message handling
   };
+
+  addToHistory() {
+    const body = JSON.stringify({
+      query: this.state.currentQuery,
+    });
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body,
+    };
+    // check if its already been searched, if not dont add
+    let pastQueries = [];
+    for (let i = 0; i < this.state.queries.length; i++) {
+      pastQueries.push(this.state.queries.query);
+    }
+    if (!pastQueries.includes(this.state.currentQuery)) {
+      fetch(config.API_ENDPOINT + '/queries/history', options)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error({ message: 'error with retrieving history' });
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('inserted query to history: ', data);
+          this.setState({
+            queries: [...this.state.queries, data],
+          });
+        })
+        .catch(err => console.log(err.message));
+    }
+  }
 
   render() {
     let isEmotionDataPresent = this.state.watsonEmotionResults ? true : false;
@@ -145,11 +156,14 @@ class App extends React.Component {
           handleSubmitQuery={this.handleSubmitQuery}
         />
         {errorDisplay}
-        <SearchHistory queries={this.state.queries}></SearchHistory>
+        <SearchHistory
+          handleSubmitQuery={this.handleSubmitQuery}
+          queries={this.state.queries}
+        />
         <div id="grid-holder">
-            {emotionChartDisplay}
-            {sentimentChartDisplay}
-            <TweetList tweets={this.state.tweets} />
+          {emotionChartDisplay}
+          {sentimentChartDisplay}
+          <TweetList tweets={this.state.tweets} />
         </div>
       </main>
     );
