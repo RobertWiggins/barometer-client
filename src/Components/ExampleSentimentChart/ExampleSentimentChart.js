@@ -66,7 +66,7 @@ export default class ExampleSentimentChart extends React.Component {
       title: {
         display: true,
         fontColor: '#000000',
-        text: 'positive sentiment: document-wide',
+        text: 'positive sentiment: entirety',
         fontSize: 24,
         padding: 20,
       },

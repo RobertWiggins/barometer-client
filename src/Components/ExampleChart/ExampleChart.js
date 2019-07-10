@@ -91,8 +91,8 @@ export default class ExampleChart extends React.Component {
     // console.log('data in EmotionChart: ', data);
 
     return (
-      <section id="emotionChart">
-        <Bar className="chart" data={data} options={options} />
+      <section className="chart" id="emotionChart">
+        <Bar data={data} options={options} />
       </section>
     );
   }

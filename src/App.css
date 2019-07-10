@@ -32,6 +32,7 @@ body {
   min-height: 100vh;
   border-radius: 1%;
   padding-bottom: 15px;
+  min-width: 350px;
   /* what to do here with body background */
 }
 
@@ -69,9 +70,24 @@ body {
   visibility: hidden;
 }
 
-#searchHistory span {
+.pastSearch {
   padding-left: 10px;
   padding-right: 10px;
+  background-color: rgba(221, 221, 221, .5);
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 5%;
+}
+
+.pastSearch:hover {
+  color: white;
+  background-color: rgba(29, 161, 242, .6);
+
 }
 
 #searchHistory {
@@ -84,6 +100,10 @@ body {
 
 #searchTweets {
   border-radius: 2%;
+}
+
+.chart {
+  min-width: 200px;
 }
 
 #emotionChart {
@@ -116,7 +136,7 @@ ul {
   padding-inline-start: 0px;
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 768px) {
   
   body {
     
@@ -139,6 +159,7 @@ ul {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: 50%;
   }
 
   #emotionChart {

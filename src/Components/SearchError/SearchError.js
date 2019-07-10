@@ -5,8 +5,7 @@ export default class SearchError extends React.Component {
     return (
       <div id="searchError">
         <p>
-          oops! Something went wrong. It's not you, it's me. Maybe. Assess your
-          search and try again.
+          oops! Something went wrong. It's not you, it's me. Maybe. Natural language analysis is best effort. Please try another search.
         </p>
       </div>
     );
