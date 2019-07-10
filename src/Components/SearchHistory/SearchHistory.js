@@ -13,7 +13,6 @@ export default class SearchHistory extends React.Component {
     ) {
       // iterate from back of history array
       let query = this.props.queries[(this.props.queries.length - count - 1)].query;
-      console.log('JUST QUERY TEXT: ', query);
       history.push(
           <button
             key={count}

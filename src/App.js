@@ -11,6 +11,7 @@ import SentimentChart from './Components/SentimentChart/SentimentChart';
 import ExampleSentimentChart from './Components/ExampleSentimentChart/ExampleSentimentChart';
 import SearchError from './Components/SearchError/SearchError';
 import SearchHistory from './Components/SearchHistory/SearchHistory';
+import LandingDescription from './Components/LandingDescription/LandingDescription';
 
 class App extends React.Component {
   state = {
@@ -20,6 +21,15 @@ class App extends React.Component {
     currentQuery: null,
     isSearchDisabled: false, // TODO not used at moment
     hasError: false,
+    showLandingPage: true,
+    isLoading: false,
+  };
+
+  onLandingButtonClick = () => {
+    console.log('registered landing click');
+    this.setState({
+      showLandingPage: false,
+    });
   };
 
   /* retrieve past query history for all users */
@@ -32,7 +42,6 @@ class App extends React.Component {
         return response.json();
       })
       .then(data => {
-        console.log('QUERY HISTORY ON MOUNT: ', data.queries);
         this.setState({
           queries: data.queries,
         });
@@ -72,14 +81,16 @@ class App extends React.Component {
       .then(data => {
         // console.log('FROM THE FRONT END!!!!!', data);
         console.log('data.watsonEmotionResults: ', data.watsonEmotionResults);
-        this.setState({
-          watsonEmotionResults: data.watsonEmotionResults,
-          tweets: data.duplicatesFiltered,
-          hasError: false,
-          currentQuery: query
-        }, this.addToHistory(query)); // TODO review with mentor. WHY???
+        this.setState(
+          {
+            watsonEmotionResults: data.watsonEmotionResults,
+            tweets: data.duplicatesFiltered,
+            hasError: false,
+            currentQuery: query,
+          },
+          this.addToHistory(query)
+        ); // TODO review with mentor. WHY???
         /* TODO add query to history. Optimal? */
-        
       })
       .catch(error =>
         this.setState({
@@ -92,12 +103,12 @@ class App extends React.Component {
     console.log('PARAM: ', newQuery);
     console.log('CURRENT QUERY: ', this.state.currentQuery);
     const body = JSON.stringify({
-      query: newQuery
+      query: newQuery,
     });
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body
+      body,
     };
     // check if its already been searched, if not dont add
     let pastQueries = [];
@@ -126,7 +137,6 @@ class App extends React.Component {
   render() {
     let isEmotionDataPresent = this.state.watsonEmotionResults ? true : false;
     let isTweetDataPresent = this.state.tweets ? true : false;
-    console.log('isEmotionDataPresent: ', isEmotionDataPresent);
 
     let emotionChartDisplay, sentimentChartDisplay;
     if (isEmotionDataPresent) {
@@ -153,21 +163,34 @@ class App extends React.Component {
     return (
       <main className="main">
         <Header />
-        <FormQuery
-          isSearchDisabled={this.state.isSearchDisabled}
-          handleSearch={this.handleSearch}
-          handleSubmitQuery={this.handleSubmitQuery}
-        />
-        {errorDisplay}
-        <SearchHistory
-          handleSubmitQuery={this.handleSubmitQuery}
-          queries={this.state.queries}
-        />
-        <div id="grid-holder">
-          {emotionChartDisplay}
-          {sentimentChartDisplay}
-          <TweetList tweets={this.state.tweets} />
-        </div>
+        {this.state.showLandingPage ? (
+          <LandingDescription
+            onLandingButtonClick={this.onLandingButtonClick}
+          />
+        ) : (
+          ''
+        )}
+        {!this.state.showLandingPage ? (
+          <div id="hideHomePage">
+            <FormQuery
+              isSearchDisabled={this.state.isSearchDisabled}
+              handleSearch={this.handleSearch}
+              handleSubmitQuery={this.handleSubmitQuery}
+            />
+            {errorDisplay}
+            <SearchHistory
+              handleSubmitQuery={this.handleSubmitQuery}
+              queries={this.state.queries}
+            />
+            <div id="grid-holder">
+              {emotionChartDisplay}
+              {sentimentChartDisplay}
+              <TweetList tweets={this.state.tweets} />
+            </div>
+          </div>
+        ) : (
+          ''
+        )}
       </main>
     );
   }
