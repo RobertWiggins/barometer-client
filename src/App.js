@@ -12,6 +12,7 @@ import ExampleSentimentChart from './Components/ExampleSentimentChart/ExampleSen
 import SearchError from './Components/SearchError/SearchError';
 import SearchHistory from './Components/SearchHistory/SearchHistory';
 import LandingDescription from './Components/LandingDescription/LandingDescription';
+import LoadingBar from './Components/LoadingBar/LoadingBar'
 
 class App extends React.Component {
   state = {
@@ -54,23 +55,15 @@ class App extends React.Component {
 
   // returns false and disables search function if search > 25ch
   handleSearch(searchQuery) {
-    // maximum search query length, allows limiting of watson targets
-    //   const queryMaxLength = 25;
-    //   if (searchQuery.length > queryMaxLength && !this.state.isSearchDisabled) {
-    //     this.setState({
-    //       isSearchDisabled: true,
-    //   });
-    //  } else if (searchQuery.length <= queryMaxLength && this.state.isSearchDisabled) {
-    //     this.setState({
-    //       isSearchDisabled: false,
-    //     });
-    //   }
+  
   }
 
   /* TODO come back and wire up functionally with twitter retrieveTweets() */
   handleSubmitQuery = query => {
-    // console.log(query);
-    /* try to communicate with backend */
+    // TODO be careful with loading here, experimental
+    this.setState({
+      isLoading: true,
+    }); 
     fetch(config.API_ENDPOINT + `/tweets/queries/${query}`) // how to send body?
       .then(response => {
         if (!response.ok) {
@@ -87,6 +80,7 @@ class App extends React.Component {
             tweets: data.duplicatesFiltered,
             hasError: false,
             currentQuery: query,
+            isLoading: false, // TODO loading experimental, careful here
           },
           this.addToHistory(query)
         ); // TODO review with mentor. WHY???
@@ -160,6 +154,8 @@ class App extends React.Component {
       errorDisplay = '';
     }
 
+    let loadingBar = this.state.isLoading ? (<LoadingBar></LoadingBar>) : ('');
+
     return (
       <main className="main">
         <Header />
@@ -182,6 +178,7 @@ class App extends React.Component {
               handleSubmitQuery={this.handleSubmitQuery}
               queries={this.state.queries}
             />
+            {loadingBar}
             <div id="grid-holder">
               {emotionChartDisplay}
               {sentimentChartDisplay}
