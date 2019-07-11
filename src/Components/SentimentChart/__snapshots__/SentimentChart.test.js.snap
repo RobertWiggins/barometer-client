@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing SentimentChart Component renders a SentimentChart with watsonEmotionResults prop 1`] = `
+<section
+  className="sentiment_chart"
+  id="sentimentChart"
+>
+  <HorizontalBar
+    className="chart"
+    data={
+      Object {
+        "datasets": Array [
+          Object {
+            "backgroundColor": Array [
+              "rgba(255, 99, 132, 0.2)",
+            ],
+            "borderColor": Array [
+              "rgba(255, 99, 132, 1)",
+            ],
+            "borderWidth": 1,
+            "data": Array [
+              -0.389527,
+            ],
+          },
+        ],
+      }
+    }
+    options={
+      Object {
+        "legend": Object {
+          "display": false,
+        },
+        "title": Object {
+          "display": true,
+          "fontColor": "#000000",
+          "fontSize": 20,
+          "text": "negative sentiment: entirety",
+        },
+      }
+    }
+  />
+</section>
+`;

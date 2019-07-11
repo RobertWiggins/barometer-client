@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing SearchHistory Component renders a SearchHistory list with queries and handleSubmit props 1`] = `
+<section
+  id="searchHistory"
+>
+  <h3>
+    Users searching
+  </h3>
+  <ul
+    id="buttonsHistory"
+  >
+    <button
+      className="pastSearch"
+      key="0"
+      onClick={[Function]}
+    >
+      earthquake
+    </button>
+    <button
+      className="pastSearch"
+      key="1"
+      onClick={[Function]}
+    >
+      trees
+    </button>
+    <button
+      className="pastSearch"
+      key="2"
+      onClick={[Function]}
+    >
+      earthquake
+    </button>
+    <button
+      className="pastSearch"
+      key="3"
+      onClick={[Function]}
+    >
+      bumblebee
+    </button>
+    <button
+      className="pastSearch"
+      key="4"
+      onClick={[Function]}
+    >
+      butterflies
+    </button>
+    <button
+      className="pastSearch"
+      key="5"
+      onClick={[Function]}
+    >
+      trump britain
+    </button>
+  </ul>
+</section>
+`;

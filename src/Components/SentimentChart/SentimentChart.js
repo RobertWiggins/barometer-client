@@ -6,6 +6,7 @@ export default class SentimentChart extends React.Component {
     // format chart.js react data
     let isDataPresent = this.props.watsonEmotionResults ? true : false;
     let data = null;
+    let options = null;
     let barColor, borderColor;
     if (isDataPresent) {
       barColor =
@@ -29,22 +30,22 @@ export default class SentimentChart extends React.Component {
           },
         ],
       };
+      
+      options = {
+        title: {
+          display: true,
+          fontColor: '#000000',
+          text: this.props.watsonEmotionResults.sentiment.document.label + ' sentiment: entirety',
+          fontSize: 20,
+        },
+        legend: {
+          display: false,
+        }
+      } 
     }
 
-    const options = {
-      title: {
-        display: true,
-        fontColor: '#000000',
-        text: this.props.watsonEmotionResults.sentiment.document.label + ' sentiment: entirety',
-        fontSize: 20,
-      },
-      legend: {
-        display: false,
-      }
-    } 
-
     return (
-      <section id="sentimentChart">
+      <section className="sentiment_chart" id="sentimentChart">
         <HorizontalBar className="chart" options={options} data={data} />
       </section>
     );

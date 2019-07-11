@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing SearchError Component renders a SearchError component snapshot 1`] = `
+<div
+  id="searchError"
+>
+  <p>
+    oops! Something went wrong. It's not you, it's me. Maybe. Natural language analysis is best effort. Please try another search.
+  </p>
+</div>
+`;
