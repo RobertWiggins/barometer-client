@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing FormQuery Component renders a FormQuery component snapshot 1`] = `
+<div
+  id="searchArea"
+>
+  <form
+    className="search"
+    id="searchOne"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="searchTweets"
+      id="search-label"
+    >
+      Search Twitter keywords
+    </label>
+    <input
+      id="searchTweets"
+      maxLength="25"
+      name="searchTweets"
+      onChange={[Function]}
+      placeholder="New York Yankees"
+      required={true}
+      type="text"
+    />
+    <button>
+      <img
+        alt="search"
+        src="./search_icon.png"
+      />
+    </button>
+  </form>
+</div>
+`;

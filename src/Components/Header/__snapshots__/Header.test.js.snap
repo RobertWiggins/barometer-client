@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Header Component renders a Header component snapshot 1`] = `
+<header
+  id="app-title"
+>
+  <h1>
+    Barometer
+  </h1>
+  <h2>
+    See the chatter.
+  </h2>
+</header>
+`;

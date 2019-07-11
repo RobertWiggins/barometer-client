@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing EmotionChart Component renders a EmotionChart with watsonEmotionResults prop 1`] = `
+<section
+  id="emotionChart"
+>
+  <Bar
+    className="chart"
+    data={
+      Object {
+        "datasets": Array [
+          Object {
+            "backgroundColor": Array [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+            ],
+            "borderColor": Array [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+            ],
+            "borderWidth": 1,
+            "data": Array [
+              0.527292,
+              0.117104,
+              0.107436,
+              0.172389,
+              0.160808,
+            ],
+            "label": "Emotion density",
+          },
+        ],
+        "labels": Array [
+          "sadness",
+          "joy",
+          "fear",
+          "disgust",
+          "anger",
+        ],
+      }
+    }
+    options={
+      Object {
+        "legend": Object {
+          "display": false,
+        },
+        "title": Object {
+          "display": true,
+          "fontColor": "#000000",
+          "fontSize": 25,
+          "padding": 20,
+          "text": "target keywords",
+        },
+      }
+    }
+  />
+</section>
+`;
