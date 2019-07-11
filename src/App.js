@@ -88,6 +88,7 @@ class App extends React.Component {
       })
       .catch(error =>
         this.setState({
+          isLoading: false,
           hasError: true,
         })
       ); // fix error message handling
