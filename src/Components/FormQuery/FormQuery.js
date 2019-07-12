@@ -23,7 +23,7 @@ class FormQuery extends React.Component {
             placeholder="New York Yankees"
             onChange={e => this.props.handleSearch(e.target.value)}
           />
-          <button><img src="./search_icon.png" alt="search"></img></button>
+          <button><img src="./static/search_icon.png" alt="search"></img></button>
         </form>
       </div>
     );
