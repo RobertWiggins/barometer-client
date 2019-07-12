@@ -7,12 +7,11 @@ emotional sentiment categories (%): sadness, joy, fear, disgust, anger, and over
 outlook. Graphical bar graphs and a tweet content pane offers insight into the emotional spectrum and sentiment
 revolving any search query.
 
-*The application is effectively a continuous, user-search driven online social presence survey.
+The application is effectively a continuous, user-search driven online social perception survey.
 
 placeholder for screenshot of natural language emotion summary per query.
 
 *tweets are limited to tweets posted within the last 7 days, forward to Twitter's standard search tier.
-
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and
@@ -120,14 +119,13 @@ Node package manager - Dependency Management
 Node.js - backend web server (https://github.com/RobertWiggins/barometer-server)
 
 
-ROME - Used to generate RSS Feeds
 Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests.
 
 Versioning
 We use SemVer for versioning. For the versions available, see the tags on this repository.
 
-## Author
+### Author
 Robert Wiggins - Original work - Barometer
 See also the list of external API dependencies which made this project possible.
 
@@ -136,5 +134,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ### Acknowledgments
 Hat tip to anyone whose code was used
-Inspiration
-etc
+Special thanks to the folks at IBM Watson for the hard work on the Natural Language Processing model and API
+To Twitter, for providing access to its world of tweets posted within the last seven days through its search API
