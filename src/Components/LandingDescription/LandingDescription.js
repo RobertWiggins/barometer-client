@@ -5,8 +5,8 @@ export default class LandingDescription extends React.Component {
   render() {
     return (
       <div id="landingPane">
-        <section className="landingRow">
-          <header>
+        <section className="landingRow" >
+          <header role="banner">
             <h3>
               Determine which emotions people on Twitter are feeling regarding
               any subject in real-time.
@@ -33,8 +33,8 @@ export default class LandingDescription extends React.Component {
             user-search driven online social presence survey.
             </p> 
         </section>
-        <section id="callAction">
-          <header>
+        <section id="callAction" >
+          <header role="banner">
             <h3>
               Record and quantify the online users' emotional viewpoint on any
               given subject.

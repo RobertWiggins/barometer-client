@@ -62,8 +62,6 @@ export default class EmotionChart extends React.Component {
     }
   } 
 
-    console.log('data in EmotionChart: ', data);
-
     const options = {
       title: {
         display: true,
@@ -71,6 +69,7 @@ export default class EmotionChart extends React.Component {
         fontSize: 25,
         fontColor: '#000000',
         padding: 20,
+        fontFamily: "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif"
       },
       legend: {
         display: false,
@@ -78,8 +77,8 @@ export default class EmotionChart extends React.Component {
     }
 
     return (
-      <section id='emotionChart'>
-        <Bar className="chart" data={data} options={options} ></Bar>
+      <section id='emotionChart' >
+        <Bar className="chart" data={data} options={options}></Bar>
       </section>
     );
   }

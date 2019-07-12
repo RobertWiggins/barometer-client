@@ -36,7 +36,8 @@ export default class SentimentChart extends React.Component {
           display: true,
           fontColor: '#000000',
           text: this.props.watsonEmotionResults.sentiment.document.label + ' sentiment: entirety',
-          fontSize: 20,
+          fontSize: 25,
+          fontFamily: "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif"
         },
         legend: {
           display: false,
@@ -45,7 +46,7 @@ export default class SentimentChart extends React.Component {
     }
 
     return (
-      <section className="sentiment_chart" id="sentimentChart">
+      <section className="sentiment_chart" id="sentimentChart" >
         <HorizontalBar className="chart" options={options} data={data} />
       </section>
     );

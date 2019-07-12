@@ -16,6 +16,8 @@ exports[`testing FormQuery Component renders a FormQuery component snapshot 1`] 
       Search Twitter keywords
     </label>
     <input
+      aria-label="Keywords to search for tweets"
+      aria-required="true"
       id="searchTweets"
       maxLength="25"
       name="searchTweets"

@@ -3,6 +3,7 @@
 exports[`testing Header Component renders a Header component snapshot 1`] = `
 <header
   id="app-title"
+  role="banner"
 >
   <h1>
     Barometer

@@ -52,6 +52,7 @@ exports[`testing EmotionChart Component renders a EmotionChart with watsonEmotio
         "title": Object {
           "display": true,
           "fontColor": "#000000",
+          "fontFamily": "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif",
           "fontSize": 25,
           "padding": 20,
           "text": "target keywords",

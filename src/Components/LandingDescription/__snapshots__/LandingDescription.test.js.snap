@@ -7,7 +7,9 @@ exports[`testing LandingDescription Component renders a LandingDescription compo
   <section
     className="landingRow"
   >
-    <header>
+    <header
+      role="banner"
+    >
       <h3>
         Determine which emotions people on Twitter are feeling regarding any subject in real-time.
       </h3>
@@ -32,7 +34,9 @@ exports[`testing LandingDescription Component renders a LandingDescription compo
   <section
     id="callAction"
   >
-    <header>
+    <header
+      role="banner"
+    >
       <h3>
         Record and quantify the online users' emotional viewpoint on any given subject.
       </h3>

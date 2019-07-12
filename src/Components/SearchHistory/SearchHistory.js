@@ -19,7 +19,6 @@ export default class SearchHistory extends React.Component {
             className="pastSearch"
             onClick={e => {
               e.preventDefault();
-              console.log(e.target.innerHTML);
               this.props.handleSubmitQuery(e.target.innerHTML);
             }}
           >
@@ -31,7 +30,7 @@ export default class SearchHistory extends React.Component {
 
     /* pass in queries from app state*/
     return (
-      <section id="searchHistory">
+      <section id="searchHistory" >
         <h3>Users searching</h3>
         <ul id="buttonsHistory">{history}</ul>
       </section>

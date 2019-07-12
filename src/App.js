@@ -27,7 +27,6 @@ class App extends React.Component {
   };
 
   onLandingButtonClick = () => {
-    console.log('registered landing click');
     this.setState({
       showLandingPage: false,
     });
@@ -72,8 +71,6 @@ class App extends React.Component {
         return response.json();
       })
       .then(data => {
-        // console.log('FROM THE FRONT END!!!!!', data);
-        console.log('data.watsonEmotionResults: ', data.watsonEmotionResults);
         this.setState(
           {
             watsonEmotionResults: data.watsonEmotionResults,
@@ -95,8 +92,6 @@ class App extends React.Component {
   };
 
   addToHistory(newQuery) {
-    console.log('PARAM: ', newQuery);
-    console.log('CURRENT QUERY: ', this.state.currentQuery);
     const body = JSON.stringify({
       query: newQuery,
     });
@@ -110,7 +105,6 @@ class App extends React.Component {
     for (let i = 0; i < this.state.queries.length; i++) {
       pastQueries.push(this.state.queries[i].query);
     }
-    console.log(options, pastQueries);
     if (!pastQueries.includes(newQuery)) {
       fetch(config.API_ENDPOINT + '/queries/history', options)
         .then(response => {
@@ -120,7 +114,6 @@ class App extends React.Component {
           return response.json();
         })
         .then(data => {
-          console.log('inserted query to history: ', data);
           this.setState({
             queries: [...this.state.queries, data],
           });
@@ -131,7 +124,6 @@ class App extends React.Component {
 
   render() {
     let isEmotionDataPresent = this.state.watsonEmotionResults ? true : false;
-    let isTweetDataPresent = this.state.tweets ? true : false;
 
     let emotionChartDisplay, sentimentChartDisplay;
     if (isEmotionDataPresent) {
@@ -158,7 +150,7 @@ class App extends React.Component {
     let loadingBar = this.state.isLoading ? (<LoadingBar></LoadingBar>) : ('');
 
     return (
-      <main className="main">
+      <div>
         <Header />
         {this.state.showLandingPage ? (
           <LandingDescription
@@ -168,7 +160,8 @@ class App extends React.Component {
           ''
         )}
         {!this.state.showLandingPage ? (
-          <div id="hideHomePage">
+          <main className="main" role="main">
+            <div id="hideHomePage">
             <FormQuery
               isSearchDisabled={this.state.isSearchDisabled}
               handleSearch={this.handleSearch}
@@ -186,10 +179,11 @@ class App extends React.Component {
               <TweetList tweets={this.state.tweets} />
             </div>
           </div>
-        ) : (
+          </main>
+          ) : (
           ''
         )}
-      </main>
+      </div>
     );
   }
 }
