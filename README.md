@@ -5,11 +5,16 @@ emotional view of events and subjects on Twitter in real-time. Through combining
 endpoint and IBM’s natural language processing emotion endpoint, the results are aggregated into 6 defined
 emotional sentiment categories (%): sadness, joy, fear, disgust, anger, and overall positive vs. negative
 outlook. Graphical bar graphs and a tweet content pane offers insight into the emotional spectrum and sentiment
-revolving any search query.
+revolving any search query. Communicating with a PostgreSQL database enables the application to access and display
+what other users are searching.
 
-The application is effectively a continuous, user-search driven online social perception survey.
+Use cases may include gathering research that will inform corporate messaging strategy, helping an individual
+consumer decide whether to attend a certain event, or indexing a user's feelings against the rest of other Twitter
+users. The application is effectively a user-driven online social perception survey.
 
-placeholder for screenshot of natural language emotion summary per query.
+### Live link: https://robs-barometer.now.sh/
+
+SCREENSHOT
 
 *tweets are limited to tweets posted within the last 7 days, forward to Twitter's standard search tier.
 
