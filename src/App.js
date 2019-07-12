@@ -6,9 +6,7 @@ import Header from './Components/Header/Header.js';
 import FormQuery from './Components/FormQuery/FormQuery';
 import EmotionChart from './Components/EmotionChart/EmotionChart';
 import TweetList from './Components/TweetList/TweetList';
-import ExampleChart from './Components/ExampleChart/ExampleChart';
 import SentimentChart from './Components/SentimentChart/SentimentChart';
-import ExampleSentimentChart from './Components/ExampleSentimentChart/ExampleSentimentChart';
 import SearchError from './Components/SearchError/SearchError';
 import SearchHistory from './Components/SearchHistory/SearchHistory';
 import LandingDescription from './Components/LandingDescription/LandingDescription';
@@ -124,7 +122,7 @@ class App extends React.Component {
 
   render() {
     let isEmotionDataPresent = this.state.watsonEmotionResults ? true : false;
-
+    let tweetList = this.state.tweets ? <TweetList tweets={this.state.tweets} /> : '';
     let emotionChartDisplay, sentimentChartDisplay;
     if (isEmotionDataPresent) {
       emotionChartDisplay = (
@@ -136,8 +134,8 @@ class App extends React.Component {
         />
       );
     } else {
-      emotionChartDisplay = <ExampleChart />;
-      sentimentChartDisplay = <ExampleSentimentChart />;
+      emotionChartDisplay = '';
+      sentimentChartDisplay = '';
     }
 
     let errorDisplay;
@@ -176,7 +174,7 @@ class App extends React.Component {
             <div id="grid-holder">
               {emotionChartDisplay}
               {sentimentChartDisplay}
-              <TweetList tweets={this.state.tweets} />
+              {tweetList}
             </div>
           </div>
           </main>
