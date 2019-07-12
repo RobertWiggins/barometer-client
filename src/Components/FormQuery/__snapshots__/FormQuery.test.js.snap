@@ -28,7 +28,7 @@ exports[`testing FormQuery Component renders a FormQuery component snapshot 1`] 
     />
     <button>
       <img
-        alt="search"
+        alt="Search"
         src="./search_icon.png"
       />
     </button>
