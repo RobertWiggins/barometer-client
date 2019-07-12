@@ -24,6 +24,11 @@ main {
   margin: auto;
 }
 
+#landingPane p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 body {
   text-align: center;
   margin-left: 15px;
@@ -32,7 +37,7 @@ body {
   min-height: 100vh;
   border-radius: 1%;
   padding-bottom: 15px;
-  min-width: 350px;
+  min-width: 320px;
   /* what to do here with body background */
 }
 
@@ -94,7 +99,7 @@ body {
 }
 
 #searchHistory h3 {
-  margin-top: 0px;
+  margin-top: 20px;
 }
 
 #searchTweets {

@@ -18,6 +18,8 @@ class FormQuery extends React.Component {
             id="searchTweets"
             type="text"
             name="searchTweets"
+            aria-label="Keywords to search for tweets"
+            aria-required="true"
             placeholder="New York Yankees"
             onChange={e => this.props.handleSearch(e.target.value)}
           />
