@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Route, Link } from 'react-router-dom';
 import config from './config';
 import './App.css';
 import Header from './Components/Header/Header.js';
@@ -47,17 +46,13 @@ class App extends React.Component {
       .catch(err => console.log(err.message));
   }
 
-  /* Query valid and submitted, add query to history */
-  /** TODO im doing this wrong, needs prev props */
 
-  // returns false and disables search function if search > 25ch
+  // TODO handle onChange validation in future version
   handleSearch(searchQuery) {
   
   }
 
-  /* TODO come back and wire up functionally with twitter retrieveTweets() */
   handleSubmitQuery = query => {
-    // TODO be careful with loading here, experimental
     this.setState({
       isLoading: true,
     }); 
@@ -75,18 +70,17 @@ class App extends React.Component {
             tweets: data.duplicatesFiltered,
             hasError: false,
             currentQuery: query,
-            isLoading: false, // TODO loading experimental, careful here
+            isLoading: false, 
           },
           this.addToHistory(query)
-        ); // TODO review with mentor. WHY???
-        /* TODO add query to history. Optimal? */
+        ); 
       })
       .catch(error =>
         this.setState({
           isLoading: false,
           hasError: true,
         })
-      ); // fix error message handling
+      ); 
   };
 
   addToHistory(newQuery) {
