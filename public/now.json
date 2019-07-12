@@ -2,13 +2,6 @@
   "version": 2,
   "alias": "robs-barometer",
   "name": "barometer",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "build" }
-    }
-  ],
   "routes": [
     {
       "src": "/static/(.*)",
