@@ -4,7 +4,9 @@ The Barometer web application grants users the ability to quantitatively measure
 emotional view of events and subjects on Twitter in real-time. Through combining Twitter's tweet search API 
 endpoint and IBM’s natural language processing emotion endpoint, the results are aggregated into 6 defined
 emotional sentiment categories (%): sadness, joy, fear, disgust, anger, and overall positive vs. negative
-outlook. Graphical bar graphs and a tweet content pane offers insight into the emotional spectrum and sentiment
+outlook. 
+
+Graphical bar graphs and a tweet content pane offers insight into the emotional spectrum and sentiment
 revolving any search query. Communicating with a PostgreSQL database enables the application to access and display
 what other users are searching.
 
