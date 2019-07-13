@@ -88,7 +88,7 @@ Node
 "react-scripts": "^3.0.1"
 
 
-To install the software and how to install them
+## To install the software
 ### `npm install`
 
 
