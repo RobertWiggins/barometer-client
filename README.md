@@ -133,6 +133,5 @@ See also the list of external API dependencies which made this project possible.
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ### Acknowledgments
-Hat tip to anyone whose code was used
 Special thanks to the folks at IBM Watson for the hard work on the Natural Language Processing model and API
 To Twitter, for providing access to its world of tweets posted within the last seven days through its search API
