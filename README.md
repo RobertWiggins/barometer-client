@@ -125,13 +125,6 @@ React - The web framework used
 Node package manager - Dependency Management
 Node.js - backend web server (https://github.com/RobertWiggins/barometer-server)
 
-
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests.
-
-Versioning
-We use SemVer for versioning. For the versions available, see the tags on this repository.
-
 ### Author
 Robert Wiggins - Original work - Barometer
 See also the list of external API dependencies which made this project possible.
