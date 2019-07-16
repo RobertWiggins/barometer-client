@@ -88,10 +88,10 @@ couldn’t customize it when you are ready for it.
 "react-scripts": "^3.0.1"
 
 ## Built With
-React - The web framework used
-Node package manager - Dependency Management
-Node.js - backend web server (https://github.com/RobertWiggins/barometer-server)
-Express - backend web server (https://github.com/RobertWiggins/barometer-server)
+React - The web framework used, 
+Node package manager - Dependency Management, 
+Node.js - backend web server (https://github.com/RobertWiggins/barometer-server), 
+Express - backend web server (https://github.com/RobertWiggins/barometer-server), 
 Jest - (testing)
 
 ### Author
