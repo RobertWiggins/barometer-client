@@ -2,15 +2,6 @@
   box-sizing: border-box;
 }
 
-/* body {
-  font-family: "Open Sans",
-  sans-serif;
-  font-size: 20px;
-  color: #444;
-  text-align: center;
-  line-height: 1.5;
-} */
-
 nav,
 footer {
   padding: 1% 0;
@@ -27,24 +18,21 @@ nav {
 
 #app-title {
   padding: 20px 15px;
+  padding-bottom: 5px;
   background-color: rgba(29, 161, 242, .05);
 }
-
-/* section {
-  min-height: 200px;
-  padding: 30px 15px;
-  background-color: #bbb;
-} */
 
 .landingRow {
   background-color: rgba(0, 161, 242, .1);
   margin-top: 15px;
+  padding-bottom: 15px;
 }
 
 #callAction {
   background-color: rgba(219, 161, 242, .1);
   margin-top: 15px;
   margin-bottom: 15px;
+  padding-bottom: 15px;
 }
 
 #hideLanding {
@@ -80,5 +68,5 @@ p + p {
 }
 
 #thesis {
-  padding-top: 15px; 
+  padding-top: 5px; 
 }

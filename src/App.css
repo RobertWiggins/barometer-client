@@ -16,6 +16,7 @@ header {
 
 header > h1 {
   font-size: 45px;
+  margin-top: 5px;
 }
 
 main {
@@ -27,6 +28,11 @@ main {
 #landingPane p {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#search-home-img {
+  width: 100%;
+  height: auto; 
 }
 
 body {
@@ -53,13 +59,6 @@ body {
   padding-right: 7px;
 }
 
-/* .search > button {
-  margin-left: 3px;
-  font: white;
-  border-radius: 10%;
-} */
-
-/* trying icon */
 .search img {
   height: 1em;
 }
@@ -189,13 +188,8 @@ ul {
 }
 
 @media only screen and (min-width: 768px) {
-  
-  body {
-     
-  }
 
   main {
-    /* height: 90vh; */
     text-align: center;
     margin: auto;
   }
