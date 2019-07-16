@@ -96,7 +96,7 @@ Express - backend web server (https://github.com/RobertWiggins/barometer-server)
 Jest - (testing)
 
 ### Author
-Robert Wiggins - Original work - Barometer
+Robert Wiggins - Original work - Barometer \
 See also the list of external API dependencies which made this project possible.
 
 ### Acknowledgments
