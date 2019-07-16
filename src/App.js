@@ -46,7 +46,6 @@ class App extends React.Component {
       .catch(err => console.log(err.message));
   }
 
-
   // TODO handle onChange validation in future version
   handleSearch(searchQuery) {
   
