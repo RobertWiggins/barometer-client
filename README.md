@@ -78,21 +78,21 @@ couldn’t customize it when you are ready for it.
 
 ## Prerequisites
 
-"chart.js": "^2.8.0",
-"cuid": "^2.1.6",
-"date-fns": "^1.30.1",
-"react": "^16.8.6",
-"react-chartjs-2": "^2.7.6",
-"react-dom": "^16.8.6",
-"react-router-dom": "^5.0.1",
-"react-scripts": "^3.0.1"
+"chart.js": "^2.8.0" \
+"cuid": "^2.1.6" \
+"date-fns": "^1.30.1" \
+"react": "^16.8.6" \
+"react-chartjs-2": "^2.7.6" \
+"react-dom": "^16.8.6" \
+"react-router-dom": "^5.0.1" \
+"react-scripts": "^3.0.1" \
 
 ## Built With
-React - The web framework used, 
-Node package manager - Dependency Management, 
-Node.js - backend web server (https://github.com/RobertWiggins/barometer-server), 
-Express - backend web server (https://github.com/RobertWiggins/barometer-server), 
-Jest - (testing)
+React - The web framework used\
+Node package manager - Dependency Management\
+Node.js - backend web server (https://github.com/RobertWiggins/barometer-server) \
+Express - backend web server (https://github.com/RobertWiggins/barometer-server) \
+Jest - (testing) \
 
 ### Author
 Robert Wiggins - Original work - Barometer
