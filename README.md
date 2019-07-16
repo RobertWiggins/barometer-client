@@ -8,22 +8,24 @@ outlook.
 
 Graphical bar graphs and a tweet content pane offers insight into the emotional spectrum and sentiment
 revolving any search query. Communicating with a PostgreSQL database enables the application to access and display
-what other users are searching.
+what other users have historically searched.
 
 Use cases may include gathering research that will inform corporate messaging strategy, helping an individual
 consumer decide whether to attend a certain event, or indexing a user's feelings against the rest of other Twitter
 users. The application is effectively a user-driven online social perception survey.
 
-### Live link: https://robs-barometer.now.sh/
+### Live Demo: https://robs-barometer.now.sh/
 
-SCREENSHOT
+![Search query with tweet results and emotion charts](https://github.com/RobertWiggins/barometer-client/blob/master/public/static/search_home.png)
 
-*tweets are limited to tweets posted within the last 7 days, forward to Twitter's standard search tier.
+![Both emotion and sentiment charts](https://github.com/RobertWiggins/barometer-client/blob/master/public/static/sentiment_charts.png)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and
 testing purposes. See deployment for notes on how to deploy the project on a live system. This client runs locally
 in conjunction with the barometer-server, which can be found at (https://github.com/RobertWiggins/barometer-server).
+Please pay specific attention to the required environment variables and API access credentials detailed within the
+barometer-server README.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -75,56 +77,23 @@ couldn’t customize it when you are ready for it.
 
 
 ## Prerequisites
+Installed with npm install:
 
-Node
-
-"chart.js": "^2.8.0",
-"cuid": "^2.1.6",
-"date-fns": "^1.30.1",
-"react": "^16.8.6",
-"react-chartjs-2": "^2.7.6",
-"react-dom": "^16.8.6",
-"react-router-dom": "^5.0.1",
-"react-scripts": "^3.0.1"
-
-
-## To install the software
-### `npm install`
-
-
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-Give the example
-And repeat
-
-until finished
-End with an example of getting some data out of the system or using it for a little demo
-
-Running the tests
-Explain how to run the automated tests for this system
-### `npm test`
-
-Break down into end to end tests
-Explain what these tests test and why
-
-Give an example
-And coding style tests
-Explain what these tests test and why
-
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
-###`npm run deploy`
-
+"chart.js": "^2.8.0" \
+"cuid": "^2.1.6" \
+"date-fns": "^1.30.1" \
+"react": "^16.8.6" \
+"react-chartjs-2": "^2.7.6" \
+"react-dom": "^16.8.6" \
+"react-router-dom": "^5.0.1" \
+"react-scripts": "^3.0.1" 
 
 ## Built With
-React - The web framework used
-Node package manager - Dependency Management
-Node.js - backend web server (https://github.com/RobertWiggins/barometer-server)
+React - The web framework used\
+Node package manager - Dependency Management\
+Node.js - backend web server (https://github.com/RobertWiggins/barometer-server) \
+Express - backend web server (https://github.com/RobertWiggins/barometer-server) \
+Jest - (testing)
 
 ### Author
 Robert Wiggins - Original work - Barometer
@@ -134,5 +103,5 @@ See also the list of external API dependencies which made this project possible.
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ### Acknowledgments
-Special thanks to the folks at IBM Watson for the hard work on the Natural Language Processing model and API
-To Twitter, for providing access to its world of tweets posted within the last seven days through its search API
+Special thanks to the folks at IBM Watson for the hard work on the Natural Language Processing model and API.
+To Twitter, for providing access to its world of tweets posted within the last seven days through its search API.
