@@ -77,7 +77,7 @@ couldn’t customize it when you are ready for it.
 
 
 ## Prerequisites
-Installed with npm install: \
+Installed with npm install:
 
 "chart.js": "^2.8.0" \
 "cuid": "^2.1.6" \
@@ -93,7 +93,7 @@ React - The web framework used\
 Node package manager - Dependency Management\
 Node.js - backend web server (https://github.com/RobertWiggins/barometer-server) \
 Express - backend web server (https://github.com/RobertWiggins/barometer-server) \
-Jest - (testing) \
+Jest - (testing)
 
 ### Author
 Robert Wiggins - Original work - Barometer
