@@ -18,10 +18,14 @@ users. The application is effectively a user-driven online social perception sur
 
 ![Search query with tweet results and emotion charts](https://github.com/RobertWiggins/barometer-client/blob/master/public/static/search_home.png)
 
+![Both emotion and sentiment charts](https://github.com/RobertWiggins/barometer-client/blob/master/public/static/sentiment_charts.png)
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and
 testing purposes. See deployment for notes on how to deploy the project on a live system. This client runs locally
 in conjunction with the barometer-server, which can be found at (https://github.com/RobertWiggins/barometer-server).
+Please pay specific attention to the required environment variables and API access credential detailed within the
+barometer-server README.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -74,8 +78,6 @@ couldn’t customize it when you are ready for it.
 
 ## Prerequisites
 
-Node
-
 "chart.js": "^2.8.0",
 "cuid": "^2.1.6",
 "date-fns": "^1.30.1",
@@ -85,44 +87,12 @@ Node
 "react-router-dom": "^5.0.1",
 "react-scripts": "^3.0.1"
 
-
-## To install the software
-### `npm install`
-
-
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-Give the example
-And repeat
-
-until finished
-End with an example of getting some data out of the system or using it for a little demo
-
-Running the tests
-Explain how to run the automated tests for this system
-### `npm test`
-
-Break down into end to end tests
-Explain what these tests test and why
-
-Give an example
-And coding style tests
-Explain what these tests test and why
-
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
-###`npm run deploy`
-
-
 ## Built With
 React - The web framework used
 Node package manager - Dependency Management
 Node.js - backend web server (https://github.com/RobertWiggins/barometer-server)
+Express - backend web server (https://github.com/RobertWiggins/barometer-server)
+Jest - (testing)
 
 ### Author
 Robert Wiggins - Original work - Barometer
