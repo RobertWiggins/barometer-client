@@ -87,7 +87,8 @@ Node
 "react-router-dom": "^5.0.1",
 "react-scripts": "^3.0.1"
 
-To install the software and how to install them
+
+## To install the software
 ### `npm install`
 
 
@@ -125,13 +126,6 @@ React - The web framework used
 Node package manager - Dependency Management
 Node.js - backend web server (https://github.com/RobertWiggins/barometer-server)
 
-
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests.
-
-Versioning
-We use SemVer for versioning. For the versions available, see the tags on this repository.
-
 ### Author
 Robert Wiggins - Original work - Barometer
 See also the list of external API dependencies which made this project possible.
@@ -140,6 +134,5 @@ See also the list of external API dependencies which made this project possible.
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ### Acknowledgments
-Hat tip to anyone whose code was used
 Special thanks to the folks at IBM Watson for the hard work on the Natural Language Processing model and API
 To Twitter, for providing access to its world of tweets posted within the last seven days through its search API
