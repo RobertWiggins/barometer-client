@@ -9,7 +9,6 @@ import SentimentChart from './Components/SentimentChart/SentimentChart';
 import SearchError from './Components/SearchError/SearchError';
 import SearchHistory from './Components/SearchHistory/SearchHistory';
 import LandingDescription from './Components/LandingDescription/LandingDescription';
-import LoadingBar from './Components/LoadingBar/LoadingBar'
 
 class App extends React.Component {
   state = {
@@ -17,10 +16,8 @@ class App extends React.Component {
     tweets: null,
     queries: null,
     currentQuery: null,
-    isSearchDisabled: false, // TODO not used at moment
     hasError: false,
     showLandingPage: true,
-    isLoading: false,
   };
 
   onLandingButtonClick = () => {
@@ -46,16 +43,9 @@ class App extends React.Component {
       .catch(err => console.log(err.message));
   }
 
-  // TODO handle onChange validation in future version
-  handleSearch(searchQuery) {
-  
-  }
-
   handleSubmitQuery = query => {
-    this.setState({
-      isLoading: true,
-    }); 
-    fetch(config.API_ENDPOINT + `/tweets/queries/${query}`) // how to send body?
+
+    fetch(config.API_ENDPOINT + `/tweets/queries/${query}`)
       .then(response => {
         if (!response.ok) {
           throw new Error({ message: 'something seems to have gone wrong' });
@@ -69,14 +59,12 @@ class App extends React.Component {
             tweets: data.duplicatesFiltered,
             hasError: false,
             currentQuery: query,
-            isLoading: false, 
           },
           this.addToHistory(query)
         ); 
       })
       .catch(error =>
         this.setState({
-          isLoading: false,
           hasError: true,
         })
       ); 
@@ -138,8 +126,6 @@ class App extends React.Component {
       errorDisplay = '';
     }
 
-    let loadingBar = this.state.isLoading ? (<LoadingBar></LoadingBar>) : ('');
-
     return (
       <div>
         <Header />
@@ -154,8 +140,6 @@ class App extends React.Component {
           <main className="main" role="main">
             <div id="hideHomePage">
             <FormQuery
-              isSearchDisabled={this.state.isSearchDisabled}
-              handleSearch={this.handleSearch}
               handleSubmitQuery={this.handleSubmitQuery}
             />
             {errorDisplay}
@@ -163,7 +147,6 @@ class App extends React.Component {
               handleSubmitQuery={this.handleSubmitQuery}
               queries={this.state.queries}
             />
-            {loadingBar}
             <div id="grid-holder">
               {emotionChartDisplay}
               {sentimentChartDisplay}

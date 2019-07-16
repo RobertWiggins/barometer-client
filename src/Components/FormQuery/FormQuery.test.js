@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import sampleState from '../../sampleState';
 import FormQuery from './FormQuery';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';

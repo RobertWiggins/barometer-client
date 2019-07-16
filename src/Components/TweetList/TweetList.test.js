@@ -4,10 +4,6 @@ import TweetList from './TweetList';
 import sampleState from '../../sampleState.js';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-// import { Adapter, Enzyme } from 'enzyme-adapter-react-15';
-
-// Enzyme.configure({ adapter: new Adapter() })
-
 
 describe('testing TweetList Component', () => {
   it('renders without crashing', () => {

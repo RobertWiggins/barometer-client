@@ -55,10 +55,8 @@ const sampleState = {
     { id: 19, query: 'earthquake', interval: '2019-07-10T01:02:39.611Z' },
   ],
   currentQuery: 'trump',
-  isSearchDisabled: false, // TODO not used at moment
   hasError: false,
   showLandingPage: false,
-  isLoading: false,
 };
 
 module.exports = sampleState;

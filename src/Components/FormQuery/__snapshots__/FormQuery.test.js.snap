@@ -13,7 +13,7 @@ exports[`testing FormQuery Component renders a FormQuery component snapshot 1`] 
       htmlFor="searchTweets"
       id="search-label"
     >
-      Search Twitter keywords
+      Tweet keywords
     </label>
     <input
       aria-label="Keywords to search for tweets"
@@ -21,7 +21,6 @@ exports[`testing FormQuery Component renders a FormQuery component snapshot 1`] 
       id="searchTweets"
       maxLength="25"
       name="searchTweets"
-      onChange={[Function]}
       placeholder="New York Yankees"
       required={true}
       type="text"

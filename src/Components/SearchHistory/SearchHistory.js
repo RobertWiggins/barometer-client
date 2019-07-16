@@ -11,7 +11,7 @@ export default class SearchHistory extends React.Component {
       count < DISPLAYSEARCHQUANTITY &&
       count !== this.props.queries.length
     ) {
-      // iterate from back of history array
+      // iterate from back of history array to attain most recent
       let query = this.props.queries[(this.props.queries.length - count - 1)].query;
       history.push(
           <button

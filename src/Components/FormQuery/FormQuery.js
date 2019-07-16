@@ -13,7 +13,7 @@ class FormQuery extends React.Component {
             this.props.handleSubmitQuery(e.target.searchTweets.value);
           }}
         >
-          <label htmlFor="searchTweets" id='search-label'>Search Twitter keywords</label>
+          <label htmlFor="searchTweets" id='search-label'>Tweet keywords</label>
           <input required maxLength="25"
             id="searchTweets"
             type="text"
@@ -21,7 +21,6 @@ class FormQuery extends React.Component {
             aria-label="Keywords to search for tweets"
             aria-required="true"
             placeholder="New York Yankees"
-            onChange={e => this.props.handleSearch(e.target.value)}
           />
           <button><img src="./static/search_icon.png" alt="search"></img></button>
         </form>

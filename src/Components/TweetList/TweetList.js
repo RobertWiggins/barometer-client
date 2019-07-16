@@ -1,5 +1,4 @@
 import React from 'react';
-import './TweetList.css';
 
 export default class TweetList extends React.Component {
 
@@ -13,7 +12,6 @@ export default class TweetList extends React.Component {
         return <li key={idx}>{tweet}</li>
       } )
     }
-    
 
     return (
       <section className="tweet_list" id="tweet-list" >

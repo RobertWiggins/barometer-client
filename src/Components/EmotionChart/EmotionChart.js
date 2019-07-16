@@ -1,5 +1,4 @@
 import React from 'react';
-import './EmotionChart.css';
 import {Bar} from 'react-chartjs-2';
 
 export default class EmotionChart extends React.Component {
@@ -23,7 +22,6 @@ export default class EmotionChart extends React.Component {
         averageEmotions.anger += emotions.emotion.anger;
       }
     );
-    /* TODO divide by zero case??? catch error? */
     for (let emotion in averageEmotions) {
       averageEmotions[emotion] /= targetsEmotions.length;
     }
