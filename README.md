@@ -8,17 +8,15 @@ outlook.
 
 Graphical bar graphs and a tweet content pane offers insight into the emotional spectrum and sentiment
 revolving any search query. Communicating with a PostgreSQL database enables the application to access and display
-what other users are searching.
+what other users have historically searched.
 
 Use cases may include gathering research that will inform corporate messaging strategy, helping an individual
 consumer decide whether to attend a certain event, or indexing a user's feelings against the rest of other Twitter
 users. The application is effectively a user-driven online social perception survey.
 
-### Live link: https://robs-barometer.now.sh/
+### Live Demo: https://robs-barometer.now.sh/
 
-SCREENSHOT
-
-*tweets are limited to tweets posted within the last 7 days, forward to Twitter's standard search tier.
+![Search query with tweet results and emotion charts](https://github.com/RobertWiggins/barometer-client/blob/master/public/static/search_home.png)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and
