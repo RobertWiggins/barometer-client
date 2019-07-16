@@ -24,7 +24,7 @@ users. The application is effectively a user-driven online social perception sur
 These instructions will get you a copy of the project up and running on your local machine for development and
 testing purposes. See deployment for notes on how to deploy the project on a live system. This client runs locally
 in conjunction with the barometer-server, which can be found at (https://github.com/RobertWiggins/barometer-server).
-Please pay specific attention to the required environment variables and API access credential detailed within the
+Please pay specific attention to the required environment variables and API access credentials detailed within the
 barometer-server README.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
