@@ -77,6 +77,7 @@ couldn’t customize it when you are ready for it.
 
 
 ## Prerequisites
+Installed with npm install: \
 
 "chart.js": "^2.8.0" \
 "cuid": "^2.1.6" \
@@ -85,7 +86,7 @@ couldn’t customize it when you are ready for it.
 "react-chartjs-2": "^2.7.6" \
 "react-dom": "^16.8.6" \
 "react-router-dom": "^5.0.1" \
-"react-scripts": "^3.0.1" \
+"react-scripts": "^3.0.1" 
 
 ## Built With
 React - The web framework used\
