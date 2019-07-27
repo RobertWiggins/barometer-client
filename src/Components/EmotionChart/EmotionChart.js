@@ -1,27 +1,23 @@
 import React from 'react';
-import {Bar} from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 export default class EmotionChart extends React.Component {
-
-  
-
   calculateAvgEmotion(targetsEmotions) {
     let averageEmotions = {
-      "sadness": 0,
-      "joy": 0,
-      "fear": 0,
-      "disgust": 0,
-      "anger": 0,
-    }
-    
-    targetsEmotions.forEach( emotions => {
-        averageEmotions.sadness += emotions.emotion.sadness;
-        averageEmotions.joy += emotions.emotion.joy;
-        averageEmotions.fear += emotions.emotion.fear;
-        averageEmotions.disgust += emotions.emotion.disgust;
-        averageEmotions.anger += emotions.emotion.anger;
-      }
-    );
+      sadness: 0,
+      joy: 0,
+      fear: 0,
+      disgust: 0,
+      anger: 0,
+    };
+
+    targetsEmotions.forEach(emotions => {
+      averageEmotions.sadness += emotions.emotion.sadness;
+      averageEmotions.joy += emotions.emotion.joy;
+      averageEmotions.fear += emotions.emotion.fear;
+      averageEmotions.disgust += emotions.emotion.disgust;
+      averageEmotions.anger += emotions.emotion.anger;
+    });
     for (let emotion in averageEmotions) {
       averageEmotions[emotion] /= targetsEmotions.length;
     }
@@ -30,35 +26,39 @@ export default class EmotionChart extends React.Component {
 
   render() {
     // get average emotion across all target keywords
-    const averageEmotionsObj = this.calculateAvgEmotion(this.props.watsonEmotionResults.emotion.targets)
+    const averageEmotionsObj = this.calculateAvgEmotion(
+      this.props.watsonEmotionResults.emotion.targets
+    );
 
     // format chart.js react data
-    let isDataPresent = (this.props.watsonEmotionResults ? true : false);
+    let isDataPresent = this.props.watsonEmotionResults ? true : false;
     let data = null;
-    if (isDataPresent) { 
-    data = {
-      labels: Object.keys(averageEmotionsObj),
-      datasets: [{
-          label: 'Emotion density',
-          data: Object.values(averageEmotionsObj),
-          backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-          ],
-          borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-          ],
-          borderWidth: 1
-      }],
+    if (isDataPresent) {
+      data = {
+        labels: Object.keys(averageEmotionsObj),
+        datasets: [
+          {
+            label: 'Emotion density',
+            data: Object.values(averageEmotionsObj),
+            backgroundColor: [
+              'rgba(54, 162, 235, 0.2)', // sad
+              'rgba(255, 206, 86, 0.2)', // joy
+              'rgba(153, 102, 255, 0.2)', // fear
+              'rgba(75, 192, 192, 0.2)', // disgust
+              'rgba(255, 99, 132, 0.2)', // anger
+            ],
+            borderColor: [
+              'rgba(54, 162, 235, 1)', // sad
+              'rgba(255, 206, 86, 1)', // joy
+              'rgba(153, 102, 255, 1)', // fear
+              'rgba(75, 192, 192, 1)',  // disgust
+              'rgba(255, 99, 132, 1)', // anger
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
     }
-  } 
 
     const options = {
       title: {
@@ -67,18 +67,26 @@ export default class EmotionChart extends React.Component {
         fontSize: 25,
         fontColor: '#000000',
         padding: 20,
-        fontFamily: "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif"
+        fontFamily: "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif",
       },
       legend: {
         display: false,
-      }
-    }
+      },
+      scales: {
+        xAxes: [
+          {
+            ticks: {
+              fontSize: 14,
+            },
+          },
+        ],
+      },
+    };
 
     return (
-      <section id='emotionChart' >
-        <Bar className="chart" data={data} options={options}></Bar>
+      <section id="emotionChart">
+        <Bar className="chart" data={data} options={options} />
       </section>
     );
   }
-
 }

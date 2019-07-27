@@ -35,13 +35,22 @@ export default class SentimentChart extends React.Component {
         title: {
           display: true,
           fontColor: '#000000',
-          text: this.props.watsonEmotionResults.sentiment.document.label + ' sentiment: entirety',
+          text: this.props.watsonEmotionResults.sentiment.document.label + ' tone overall',
           fontSize: 25,
           fontFamily: "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif"
         },
         legend: {
           display: false,
-        }
+        },
+        scales: {
+          xAxes: [
+            {
+              ticks: {
+                fontSize: 14,
+              },
+            },
+          ],
+        },
       } 
     }
 

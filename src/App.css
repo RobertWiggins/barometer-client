@@ -52,15 +52,22 @@ body {
   flex-direction: row;
   justify-content: center;
   align-content: space-between;
-  padding-top: 15px;
-}
-
-#search-label {
-  padding-right: 7px;
+  padding-top: 20px;
 }
 
 .search img {
   height: 1em;
+} 
+
+.search button {
+  border-radius: 0px 20px 20px 0px;
+  height: 32px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline-width: 0;
+  outline-color: transparent;
 }
 
 #searchError,
@@ -107,7 +114,19 @@ body {
 }
 
 #searchTweets {
-  border-radius: 2%;
+  border-radius: 20px 0px 0px 20px;
+  border: rgba(221, 221, 221, 1) solid 1px;
+  padding: 2px;
+  width: 220px;
+  text-indent: 10px;
+  margin: 0 auto;
+  -webkit-tap-highlight-color: transparent;
+  height: 32px; 
+}
+
+input:focus {
+  outline-width: 0;
+  outline-color: transparent;
 }
 
 .chart {
@@ -130,15 +149,20 @@ body {
 }
 
 #tweets li {
+  font-family: 'Source Sans Pro', 'Open Sans', 'Lato', sans-serif;
   border-left: solid lightgray 1px;
   border-right: solid lightgray 1px;
   border-top: solid lightgray 1px;
-  border-bottom: solid lightgray 1px;
-  background-color: rgba(29, 161, 242, .03);
+  background-color: rgba(160, 204, 231, 0.03);
   border-radius: 1%;
   padding: 10px;
-  margin: 7px;
+  margin-left: 8px;
   text-align: left;
+  line-height: 1.4em;
+}
+
+li:last-child { 
+  border-bottom: solid lightgray 1px; 
 }
 
 ul {
@@ -166,6 +190,7 @@ ul {
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
     grid-auto-columns: 50%;
+    grid-gap: 40px;
   }
 
   #emotionChart {

@@ -13,7 +13,6 @@ class FormQuery extends React.Component {
             this.props.handleSubmitQuery(e.target.searchTweets.value);
           }}
         >
-          <label htmlFor="searchTweets" id='search-label'>Tweet keywords</label>
           <input required maxLength="25"
             id="searchTweets"
             type="text"
