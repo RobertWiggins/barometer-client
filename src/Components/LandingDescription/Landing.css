@@ -40,7 +40,7 @@ nav {
   padding-left: 10px;
   padding-right: 10px;
   margin: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: gainsboro;
   border: 1px solid gray;
   color: black;
   text-align: center;
@@ -55,7 +55,9 @@ nav {
 
 
 #hideLanding:hover {
-  background-color: rgb(81, 197, 158);
+  color: white;
+  background-color: rgba(29, 161, 242, .6);
+
 }
 
 p {

@@ -11,8 +11,8 @@ export default class SentimentChart extends React.Component {
     if (isDataPresent) {
       barColor =
         this.props.watsonEmotionResults.sentiment.document.label === 'negative'
-          ? 'rgba(255, 99, 132, 0.2)'
-          : 'rgba(75, 192, 192, 0.2)';
+          ? 'rgba(255, 99, 132, 1)'
+          : 'rgba(75, 192, 192, 1)';
       borderColor =
       (this.props.watsonEmotionResults.sentiment.document.label ===
       'negative'
@@ -34,10 +34,11 @@ export default class SentimentChart extends React.Component {
       options = {
         title: {
           display: true,
-          fontColor: '#333333',
+          fontColor: '#DCDCDC',
           text: this.props.watsonEmotionResults.sentiment.document.label + ' sentiment',
-          fontSize: 25,
-          fontFamily: "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif"
+          fontSize: 40,
+          fontFamily: "'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif'",
+          fontStyle: 500,        
         },
         legend: {
           display: false,
@@ -47,6 +48,23 @@ export default class SentimentChart extends React.Component {
             {
               ticks: {
                 fontSize: 14,
+                fontColor: '#DCDCDC',
+                // beginAtZero: true,
+              },
+              gridLines: {
+                zeroLineColor: '#DCDCDC',
+                color: '#DCDCDC',
+              },
+            },
+          ],
+          yAxes: [
+            {
+              ticks: {
+                fontSize: 14,
+                fontColor: '#DCDCDC',
+              },
+              gridLines: {
+                color: '#DCDCDC',
               },
             },
           ],

@@ -1,19 +1,18 @@
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', 'Source Sans Pro', 'Lato', sans-serif;
-  color: #eee0c3;
+  color: gainsboro;
 }
 
 .container {
   background-color: #0f1b30;
-  color: #eee0c3;
+  color: gainsboro;
 }
 
 html {
   max-width: 1000px;
   min-width: 340px;
   background-color: #0f1b30;
-
 }
 
 .app-header {
@@ -32,7 +31,7 @@ html {
 .app-title {
   font-weight: 500;
   font-family: 'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif';
-  font-size: 60px;
+  font-size: 70px;
   margin-top: 5px;
 }
 
@@ -74,7 +73,7 @@ html {
 } 
 
 .tagline {
-  color: #eee0c3;
+  color: gainsboro;
   font-weight: 500;
   font-family: 'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif';
   font-size: 35px;
@@ -155,7 +154,7 @@ button:focus {
 .pastSearch {
   padding-left: 10px;
   padding-right: 10px;
-  background-color: rgba(221, 221, 221, .5);
+  background-color: gainsboro;
   border: none;
   color: black;
   text-align: center;
@@ -176,7 +175,10 @@ button:focus {
 }
 
 #searchHistory h3 {
-  margin-top: 20px;
+  margin-top: 25px;
+  font-family: 'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif';
+  font-weight: 500;
+  font-size: 30px;
 }
 
 #searchTweets {
@@ -195,6 +197,10 @@ input:focus {
   outline-color: transparent;
 }
 
+canvas {
+  
+}
+
 .chart {
   min-width: 200px;
 }
@@ -207,6 +213,9 @@ input:focus {
   padding-bottom: 10px;
   padding-top: 5px;
   font-size: 25px;
+  font-family: 'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif';
+  font-weight: 500;
+  font-size: 40px;
 }
 
 #tweets > ul {
@@ -224,7 +233,7 @@ input:focus {
   padding: 10px;
   margin-left: 8px;
   text-align: left;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
 
 li:last-child { 
