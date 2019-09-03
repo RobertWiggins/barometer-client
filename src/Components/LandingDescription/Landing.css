@@ -52,8 +52,6 @@ nav {
   border-radius: 20px;
 }
 
-
-
 #hideLanding:hover {
   color: white;
   background-color: rgba(29, 161, 242, .6);
@@ -71,4 +69,5 @@ p + p {
 
 #thesis {
   padding-top: 5px; 
+  font-style: italic;
 }
