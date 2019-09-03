@@ -11,11 +11,11 @@ exports[`testing EmotionChart Component renders a EmotionChart with watsonEmotio
         "datasets": Array [
           Object {
             "backgroundColor": Array [
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(255, 99, 132, 1)",
             ],
             "borderColor": Array [
               "rgba(54, 162, 235, 1)",
@@ -53,6 +53,18 @@ exports[`testing EmotionChart Component renders a EmotionChart with watsonEmotio
           "xAxes": Array [
             Object {
               "ticks": Object {
+                "fontColor": "#DCDCDC",
+                "fontSize": 13,
+              },
+            },
+          ],
+          "yAxes": Array [
+            Object {
+              "gridLines": Object {
+                "color": "#DCDCDC",
+              },
+              "ticks": Object {
+                "fontColor": "#DCDCDC",
                 "fontSize": 13,
               },
             },
@@ -60,11 +72,12 @@ exports[`testing EmotionChart Component renders a EmotionChart with watsonEmotio
         },
         "title": Object {
           "display": true,
-          "fontColor": "#000000",
-          "fontFamily": "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif",
-          "fontSize": 25,
+          "fontColor": "#DCDCDC",
+          "fontFamily": "'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif'",
+          "fontSize": 40,
+          "fontStyle": 500,
           "padding": 20,
-          "text": "tweet emotions",
+          "text": "Tweet emotions",
         },
       }
     }

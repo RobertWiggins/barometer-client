@@ -43,6 +43,11 @@ export default class SentimentChart extends React.Component {
         legend: {
           display: false,
         },
+        tooltips: {
+          callbacks : {
+            title: () => 'overall sentiment',
+          }
+        },
         scales: {
           xAxes: [
             {

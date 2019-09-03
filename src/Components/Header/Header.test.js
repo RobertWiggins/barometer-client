@@ -12,7 +12,7 @@ describe('testing Header Component', () => {
   });
 
   it('renders a Header component snapshot', () => {
-    const wrapper = shallow(<Header />).find('#app-title');
+    const wrapper = shallow(<Header />).find('.app-header');
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

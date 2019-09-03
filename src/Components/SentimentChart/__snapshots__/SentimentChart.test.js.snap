@@ -12,7 +12,7 @@ exports[`testing SentimentChart Component renders a SentimentChart with watsonEm
         "datasets": Array [
           Object {
             "backgroundColor": Array [
-              "rgba(255, 99, 132, 0.2)",
+              "rgba(255, 99, 132, 1)",
             ],
             "borderColor": Array [
               "rgba(255, 99, 132, 1)",
@@ -33,7 +33,23 @@ exports[`testing SentimentChart Component renders a SentimentChart with watsonEm
         "scales": Object {
           "xAxes": Array [
             Object {
+              "gridLines": Object {
+                "color": "#DCDCDC",
+                "zeroLineColor": "#DCDCDC",
+              },
               "ticks": Object {
+                "fontColor": "#DCDCDC",
+                "fontSize": 14,
+              },
+            },
+          ],
+          "yAxes": Array [
+            Object {
+              "gridLines": Object {
+                "color": "#DCDCDC",
+              },
+              "ticks": Object {
+                "fontColor": "#DCDCDC",
                 "fontSize": 14,
               },
             },
@@ -41,10 +57,16 @@ exports[`testing SentimentChart Component renders a SentimentChart with watsonEm
         },
         "title": Object {
           "display": true,
-          "fontColor": "#000000",
-          "fontFamily": "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif",
-          "fontSize": 25,
+          "fontColor": "#DCDCDC",
+          "fontFamily": "'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif'",
+          "fontSize": 40,
+          "fontStyle": 500,
           "text": "negative sentiment",
+        },
+        "tooltips": Object {
+          "callbacks": Object {
+            "title": [Function],
+          },
         },
       }
     }
