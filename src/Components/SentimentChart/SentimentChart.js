@@ -35,7 +35,7 @@ export default class SentimentChart extends React.Component {
         title: {
           display: true,
           fontColor: '#DCDCDC',
-          text: this.props.watsonEmotionResults.sentiment.document.label + ' sentiment',
+          text: (this.props.watsonEmotionResults.sentiment.document.label === 'positive' ? 'Positive sentiment' : 'Negative sentiment'),
           fontSize: 40,
           fontFamily: "'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif'",
           fontStyle: 500,        

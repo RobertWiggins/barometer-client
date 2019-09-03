@@ -61,7 +61,7 @@ exports[`testing SentimentChart Component renders a SentimentChart with watsonEm
           "fontFamily": "'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif'",
           "fontSize": 40,
           "fontStyle": 500,
-          "text": "negative sentiment",
+          "text": "Negative sentiment",
         },
         "tooltips": Object {
           "callbacks": Object {
