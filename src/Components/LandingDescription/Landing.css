@@ -23,39 +23,39 @@ nav {
 }
 
 .landingRow {
-  background-color: rgba(0, 161, 242, .1);
-  margin-top: 15px;
+  color: #eee0c3;
   padding-bottom: 15px;
+  line-height: 1.5em;
 }
 
 #callAction {
-  background-color: rgba(219, 161, 242, .1);
   margin-top: 15px;
   margin-bottom: 15px;
   padding-bottom: 15px;
 }
 
 #hideLanding {
-  margin-top: 20px;
-  width: 250px;
+  margin-top: 5px;
+  width: 270px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: rgba(221, 221, 221, .5);
+  margin: 10px;
+  background-color: gainsboro;
   border: 1px solid gray;
   color: black;
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
-  margin: 4px 2px;
+  margin-bottom: 20px;
   transition: 0.3s;
   cursor: pointer;
-  border-radius: 5%;
+  border-radius: 20px;
 }
 
-
-
 #hideLanding:hover {
-  background-color: rgba(97, 163, 204, 0.4);
+  color: white;
+  background-color: rgba(29, 161, 242, .6);
+
 }
 
 p {
@@ -69,4 +69,5 @@ p + p {
 
 #thesis {
   padding-top: 5px; 
+  font-style: italic;
 }

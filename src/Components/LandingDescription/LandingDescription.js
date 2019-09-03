@@ -6,12 +6,10 @@ export default class LandingDescription extends React.Component {
     return (
       <div id="landingPane">
         <section className="landingRow">
-          <header role="banner">
-            <h3>
+          <h3 className="feature-summary">
               Determine which emotions people on Twitter are feeling regarding
               any subject in real-time.
-            </h3>
-          </header>
+          </h3>
           <p>
             The Barometer web application grants users the ability to
             quantitatively measure the general population’s emotional view of
@@ -36,12 +34,10 @@ export default class LandingDescription extends React.Component {
           </p>
         </section>
         <section id="callAction">
-          <header role="banner">
-            <h3>
+          <h3 className="feature-summary">
               Record and quantify the online users' emotional viewpoint on any
               given subject.
-            </h3>
-          </header>
+          </h3>
           <p>
             Interactive charts and comparative displays enable digestible
             proprietary insights.

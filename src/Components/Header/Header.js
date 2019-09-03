@@ -3,8 +3,8 @@ import React from 'react'
 export default class Header extends React.Component {
   render() {
     return (
-      <header id="app-header" role="banner">
-        <h1>
+      <header className="app-header" role="banner">
+        <h1 className="title-letter-holder">
           <span className="app-title blue">B</span>
           <span className="app-title blue-purple">a</span>
           <span className="app-title purple">r</span>

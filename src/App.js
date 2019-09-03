@@ -127,7 +127,7 @@ class App extends React.Component {
     }
 
     return (
-      <div>
+      <div className='container'>
         <Header />
         {this.state.showLandingPage ? (
           <LandingDescription
