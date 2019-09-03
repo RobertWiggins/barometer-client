@@ -198,7 +198,7 @@ input:focus {
 }
 
 canvas {
-  
+
 }
 
 .chart {
@@ -234,6 +234,7 @@ canvas {
   margin-left: 8px;
   text-align: left;
   line-height: 1.5em;
+  margin-right: 8px;
 }
 
 li:last-child { 
