@@ -1,19 +1,32 @@
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', 'Source Sans Pro', 'Lato', sans-serif;
-  color: #333333;
+  color: #eee0c3;
+}
+
+.container {
+  background-color: #0f1b30;
+  color: #eee0c3;
 }
 
 html {
   max-width: 1000px;
   min-width: 340px;
+  background-color: #0f1b30;
+
 }
 
-header {
+.app-header {
   padding-top: 15px;
+  padding-bottom: 1px;
   padding-left: 5px;
   padding-right: 5px;
-  font-family: 'Roboto', sans-serif;
+  background-color: #0f1b30;
+}
+
+.title-letter-holder {
+  margin: 0;
+  padding: 20px;
 }
 
 .app-title {
@@ -61,10 +74,12 @@ header {
 } 
 
 .tagline {
+  color: #eee0c3;
   font-weight: 500;
   font-family: 'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif';
   font-size: 35px;
   margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 main {
@@ -77,6 +92,10 @@ main {
   padding-right: 10px;
 }
 
+.feature-summary {
+  padding-top: 10px;
+}
+
 #search-home-img {
   width: 100%;
   height: auto; 
@@ -86,10 +105,10 @@ body {
   text-align: center;
   margin-left: 15px;
   margin-right: 15px;
-  background-color: snow;
+  /* background-color: snow; */
   min-height: 100vh;
   border-radius: 1%;
-  padding-bottom: 15px;
+  /* padding-bottom: 15px; */
   min-width: 290px;
   /* what to do here with body background */
 }
@@ -226,7 +245,6 @@ ul {
   }
 
   html {
-    background-color: rgba(29, 161, 242, .2);
     min-width: 290px;
     max-width: none;
   }
