@@ -65,7 +65,7 @@ export default class EmotionChart extends React.Component {
         display: true,
         text: 'tweet emotions',
         fontSize: 25,
-        fontColor: '#000000',
+        fontColor: '#333333',
         padding: 20,
         fontFamily: "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif",
       },

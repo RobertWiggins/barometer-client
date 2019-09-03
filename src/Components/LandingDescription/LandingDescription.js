@@ -18,7 +18,6 @@ export default class LandingDescription extends React.Component {
             events and subjects on Twitter.
           </p>
           <p>
-            {' '}
             Through combining Twitter's tweet search result API and IBM’s
             natural language processing model, the results are aggregated into 6
             emotional sentiment categories (%): sadness, joy, fear, disgust,
