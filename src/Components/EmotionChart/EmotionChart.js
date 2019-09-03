@@ -63,7 +63,7 @@ export default class EmotionChart extends React.Component {
     const options = {
       title: {
         display: true,
-        text: 'target keywords',
+        text: 'tweet emotions',
         fontSize: 25,
         fontColor: '#000000',
         padding: 20,
@@ -76,7 +76,7 @@ export default class EmotionChart extends React.Component {
         xAxes: [
           {
             ticks: {
-              fontSize: 14,
+              fontSize: 13,
             },
           },
         ],

@@ -30,12 +30,21 @@ exports[`testing SentimentChart Component renders a SentimentChart with watsonEm
         "legend": Object {
           "display": false,
         },
+        "scales": Object {
+          "xAxes": Array [
+            Object {
+              "ticks": Object {
+                "fontSize": 14,
+              },
+            },
+          ],
+        },
         "title": Object {
           "display": true,
           "fontColor": "#000000",
           "fontFamily": "'Open Sans', 'Source Sans Pro', 'Lato', sans-serif",
           "fontSize": 25,
-          "text": "negative sentiment: entirety",
+          "text": "negative sentiment",
         },
       }
     }
