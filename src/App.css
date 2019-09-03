@@ -1,26 +1,73 @@
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', 'Source Sans Pro', 'Lato', sans-serif;
+  color: #333333;
 }
 
 html {
-  background-color: #596d7933;
   max-width: 1000px;
-  min-width: 350px;
+  min-width: 340px;
 }
 
 header {
-  padding: 5px;
+  padding-top: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-family: 'Roboto', sans-serif;
 }
 
-header > h1 {
-  font-size: 45px;
+.app-title {
+  font-weight: 500;
+  font-family: 'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif';
+  font-size: 60px;
+  margin-top: 5px;
+}
+
+/* rainbow title colors */
+.blue {
+  color: #405de6;
+} 
+
+.blue-purple {
+  color: #5851db;
+} 
+
+.purple {
+  color: #833ab4;
+} 
+
+.purple-pink {
+  color: #c13584;
+} 
+
+.pink {
+  color: #e1306c;
+} 
+
+.red {
+  color: #fd1d1d;
+} 
+
+.red-orange {
+  color: #f56040;
+} 
+
+.orange {
+  color: #f77737;
+} 
+
+.orange-yellow {
+  color: #fcaf45;
+} 
+
+.tagline {
+  font-weight: 500;
+  font-family: 'Cormorant', 'Lora', 'Montserrat', 'Roboto', 'serif';
+  font-size: 35px;
   margin-top: 5px;
 }
 
 main {
-  /* height: 90vh; */
   text-align: center;
   margin: auto;
 }
