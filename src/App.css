@@ -121,7 +121,7 @@ body {
 }
 
 .search img {
-  height: 1em;
+  height: 1.35em;
 } 
 
 .search button {
@@ -189,7 +189,9 @@ button:focus {
   text-indent: 10px;
   margin: 0 auto;
   -webkit-tap-highlight-color: transparent;
-  height: 32px; 
+  height: 32px;
+  color: black;
+  font-size: 1.2em;
 }
 
 input:focus {
