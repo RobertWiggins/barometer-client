@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": "robs-barometer",
+  "alias": "barometerapp",
   "name": "barometer",
   "routes": [
     {
