@@ -76,7 +76,7 @@ class App extends React.Component {
     });
     const options = {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": '*' }, // TODO: probably make this more specific
       body,
     };
     // check if its already been searched, if not dont add
