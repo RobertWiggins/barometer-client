@@ -76,7 +76,7 @@ class App extends React.Component {
     });
     const options = {
       method: 'POST',
-      headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": '*' }, // TODO: probably make this more specific
+      headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": 'https://barometerapp.vercel.app' }, // TODO: maybe change domain string to variable
       body,
     };
     // check if its already been searched, if not dont add
