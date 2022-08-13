@@ -76,6 +76,7 @@ class App extends React.Component {
     });
     const options = {
       method: 'POST',
+      mode: 'no-cors', // ! temp trying to bypass cors
       headers: { 'content-type': 'application/json', "Access-Control-Allow-Origin": 'https://barometerapp.vercel.app' }, // TODO: maybe change domain string to variable
       body,
     };
