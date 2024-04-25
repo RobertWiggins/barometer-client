@@ -5,7 +5,7 @@ export default class SearchError extends React.Component {
     return (
       <div id="searchError">
         <p>
-          oops! Heroku database wants my money to display! I shall never fall. I relish in trench warfare.
+          Unfortunately, Twitter has removed free access to its tweet search endpoint.
         </p>
       </div>
     );
