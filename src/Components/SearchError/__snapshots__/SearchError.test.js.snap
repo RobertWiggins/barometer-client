@@ -5,7 +5,7 @@ exports[`testing SearchError Component renders a SearchError component snapshot 
   id="searchError"
 >
   <p>
-    oops! Heroku database wants my money to display! I shall never fall. I relish in trench warfare.
+    Unfortunately, Twitter has removed free access to its tweet search endpoint.
   </p>
 </div>
 `;

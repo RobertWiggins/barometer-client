@@ -1,3 +1,3 @@
 export default {
-  API_ENDPOINT: "https://calm-badlands-84231.herokuapp.com"
+  API_ENDPOINT: "https://protected-badlands-04047.herokuapp.com"
 }
